@@ -3,6 +3,7 @@ The catvehicle ROS package houses files that utilize the Gazebo simulator, and a
 
 # Dependencies
 * ROS
+* obstaclestopper
 
 # catkin workspace and build
 In order to use the catvehicle ROS package, you should work within a catkin workspace. If you do not already have one:
