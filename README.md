@@ -54,6 +54,7 @@ TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 * Jonathan Sprinkle (sprinkjm@email.arizona.edu)
 * Rahul Bhadani
 * Sam Taylor
+* Kennon McKeever (kennondmckeever@email.arizona.edu)
 * Alex Warren
 * Swati Munjal (smunjal@email.arizona.edu)
 * Ashley Kang
