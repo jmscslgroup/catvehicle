@@ -19,18 +19,12 @@ SUCH DAMAGE.
 THE ARIZONA BOARD OF REGENTS SPECIFICALLY DISCLAIMS ANY WARRANTIES, 
 INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY 
 AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE PROVIDED HEREUNDER
-IS ON AN "AS IS" BASIS, AND THE UNIVERSITY OF CALIFORNIA HAS NO OBLIGATION
+IS ON AN "AS IS" BASIS, AND THE ARIZONA BOARD OF REGENTS HAS NO OBLIGATION
 TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 
 Summary: 
-========
+This launch file loads the worlds and models for the catvehicle
 
-This launch file loads the worlds and models for the catvehicle with the name catvehicle in stationary state. 
-
-How to execute this file?
-========================
-
-roslaunch catvehicle catvehicle_skidpan.launch
 -->
 
 <launch>
@@ -40,7 +34,7 @@ roslaunch catvehicle catvehicle_skidpan.launch
 	  <arg name="gui" default="false"/>
 	  <arg name="headless" default="false"/>
 	  <arg name="debug" default="false"/>
-      <arg name="extra_gazebo_args" default="--seed 0"/>
+      <arg name="worldfile" default="enter_worldfile_no_path.world"/>
 
       <!-- change these defaults here, or as a cmd line arg, in order to turn off   -->
       <!--   sensors that you aren't using, thus freeing up computational resources -->
@@ -50,26 +44,24 @@ roslaunch catvehicle catvehicle_skidpan.launch
       <arg name="camera_right" default="true"/>
       <arg name="camera_left" default="true"/>
 
-<param name="use_sim_time" value="true"/>
-
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find catvehicle)/worlds/skidpan.world"/>
+    <arg name="world_name" value="$(find catvehicle)/worlds/$(arg worldfile)"/>
     <arg name="debug" value="$(arg debug)" />
     <arg name="gui" value="$(arg gui)" />
     <arg name="paused" value="$(arg paused)"/>
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="headless" value="$(arg headless)"/>
-    <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
   </include>
 
 <group ns="catvehicle">
 <param name="robot_description"
          command="$(find xacro)/xacro.py '$(find catvehicle)/urdf/catvehicle.xacro' roboname:='catvehicle' front_laser_points:='$(arg front_laser_points)' velodyne_points:='$(arg velodyne_points)' camera_right:='$(arg camera_right)' camera_left:='$(arg camera_left)'" />
-<include file="$(find catvehicle)/launch/catvehicle_slomo.launch">
+<include file="$(find catvehicle)/launch/catvehicle.launch">
     <arg name="robot_name" value="catvehicle"/>
-    <arg name="init_pose" value="-x 1 -y 1 -z 0"/>
+    <arg name="init_pose" value="-x 0 -y 0 -z 0"/>
     <arg name="config_file" value="catvehicle_control.yaml"/>
 </include>
-
 </group>
+
+
 </launch>
