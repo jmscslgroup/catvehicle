@@ -52,13 +52,13 @@ TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 
 ## Authors and contributors
 * Jonathan Sprinkle (sprinkjm@email.arizona.edu)
-* Rahul Bhadani
+* Rahul Bhadani (rahulkumarbhadani@email.arizona.edu)
 * Sam Taylor
 * Kennon McKeever (kennondmckeever@email.arizona.edu)
 * Alex Warren
 * Swati Munjal (smunjal@email.arizona.edu)
-* Ashley Kang
-* Matt Bunting
+* Ashley Kang (askang@email.arizona.edu)
+* Matt Bunting (mosfet@email.arizona.edu)
 * Sean Whitsitt
 
 ## Support
