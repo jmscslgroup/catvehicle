@@ -2,7 +2,7 @@
 <!--
 
 Author: Jonathan Sprinkle, Sam Taylor, Alex Warren
-Copyright (c) 2013-2015 Arizona Board of Regents
+Copyright (c) 2015 Arizona Board of Regents
 All rights reserved.
 
 Permission is hereby granted, without written agreement and without 
@@ -29,42 +29,44 @@ through Gazebo. For more information and for the tutorials used to create
 this file, see
 http://gazebosim.org/tutorials/?tut=ros_control#Prerequisites
 
+Sensors are included separately, based on the arguments passed to the xacro include
+
 -->
 <robot>
 
 
 <gazebo reference="back_right_wheel_link">
-	      <mu1>1</mu1>
-              <mu2>1</mu2>
-		<kp>1000000</kp>
-		<kd>0.1</kd>
+	      <mu1>10000</mu1>
+              <mu2>10000</mu2>
+		<kp>10000000</kp>
+		<kd>1</kd>
 		<minDepth>0.01</minDepth>
 		<maxVel>10.0</maxVel>            
 </gazebo>
 
 <gazebo reference="back_left_wheel_link">
-              <mu1>1</mu1>
-              <mu2>1</mu2>
-		<kp>1000000</kp>
-                <kd>0.1</kd> 
+              <mu1>10000</mu1>
+              <mu2>10000</mu2>
+		<kp>10000000</kp>
+                <kd>1</kd> 
                 <minDepth>0.01</minDepth>
                 <maxVel>10.0</maxVel>  
 </gazebo>
 
 <gazebo reference="front_right_wheel_link">
-	      <mu1>1</mu1>
-              <mu2>1</mu2>
-                <kp>100000</kp>
-                <kd>0.1</kd> 
+	      <mu1>10000</mu1>
+              <mu2>10000</mu2>
+                <kp>1000000</kp>
+                <kd>1</kd> 
                 <minDepth>0.01</minDepth>
                 <maxVel>100.0</maxVel> 
 </gazebo>
 
 <gazebo reference="front_left_wheel_link">
-	      <mu1>1</mu1>
-              <mu2>1</mu2>
-                <kp>100000</kp>
-                <kd>0.1</kd> 
+	      <mu1>10000</mu1>
+              <mu2>10000</mu2>
+                <kp>1000000</kp>
+                <kd>1</kd> 
                 <minDepth>0.01</minDepth>
                 <maxVel>100.0</maxVel> 
 </gazebo>
@@ -88,12 +90,14 @@ http://gazebosim.org/tutorials/?tut=ros_control#Prerequisites
 </gazebo>
 
 
+<!--camera-->
+<!-- JMS removed to see if it improves sim times -->
+<!--
 <gazebo reference="camera_link">
    <mu1>0.6</mu1>
    <mu2>0.5</mu2>
 </gazebo>
 
-<!--camera-->
 <gazebo reference="camera_link">
    <sensor type="camera" name="camera1">
       <update_rate>30.0</update_rate>
@@ -131,6 +135,7 @@ http://gazebosim.org/tutorials/?tut=ros_control#Prerequisites
       </plugin>
     </sensor>
 </gazebo>
+-->
 
 <gazebo reference="laser_link">
    <mu1>0.6</mu1>
@@ -169,6 +174,7 @@ http://gazebosim.org/tutorials/?tut=ros_control#Prerequisites
                       <frameName>laser_link</frameName>  -->
 			   <plugin name="laser_controller" filename="libgazebo_ros_block_laser.so">
 			      <frameName>laser_link</frameName>
+			      <hokuyoMinIntensity>101</hokuyoMinIntensity>
 			      <robotNamespace>/$(arg roboname)</robotNamespace>
 			      <topicName>lidar_points</topicName>
 			      <gaussianNoise>0.02</gaussianNoise>
@@ -185,7 +191,7 @@ http://gazebosim.org/tutorials/?tut=ros_control#Prerequisites
 <gazebo reference="front_laser_link">
         <sensor type="ray" name="sick_lms291">
               <pose>0 0 0 0 0 0</pose>
-                   <visualize>false</visualize>
+                   <visualize>true</visualize>
                     <update_rate>50</update_rate>
                        <ray>
                            <scan>
@@ -197,22 +203,23 @@ http://gazebosim.org/tutorials/?tut=ros_control#Prerequisites
                                 </horizontal>
                            </scan>
                            <range>
-                                <min>0.5</min>
+                                <min>1.5</min>
                                 <!-- This range is in m, I hope... -->
-                                <max>50.0</max>
+                                <max>80.0</max>
                                 <resolution>0.05</resolution>
                            </range>
+<!--
                            <noise>
                                 <type>gaussian</type>
                                 <mean>0.0</mean>
                                 <stddev>0.02</stddev>
                            </noise>
+-->
                       </ray>
 			   <plugin name="sick_lms291_controller" filename="libgazebo_ros_laser.so">
-			      <robotNamespace>/$(arg roboname)</robotNamespace>
+<!--			      <robotNamespace>/catvehicle</robotNamespace>-->
+			      <topicName>/$(arg roboname)/front_laser_points</topicName>
 			      <frameName>front_laser_link</frameName>
-			      <tf_prefix></tf_prefix>
-			      <topicName>front_laser_points</topicName>
 			      <gaussianNoise>0.02</gaussianNoise>
                  </plugin>
       </sensor>
@@ -227,8 +234,8 @@ http://gazebosim.org/tutorials/?tut=ros_control#Prerequisites
 
 <gazebo>
     <plugin filename="libgazebo_ros_joint_state_publisher.so" name="joint_state_publisher">
-      <jointName>back_left_wheel_joint, back_right_wheel_joint, front_left_steering_joint, front_right_steering_joint, front_right_wheel_joint, front_left_wheel_joint, front_laser_joint</jointName>
-      <updateRate>20.0</updateRate>
+      <jointName>back_left_wheel_joint, back_right_wheel_joint, front_left_steering_joint, front_right_steering_joint, front_right_wheel_joint, front_left_wheel_joint</jointName>
+      <updateRate>50.0</updateRate>
       <robotNamespace>/$(arg roboname)</robotNamespace>
       <alwaysOn>true</alwaysOn>
     </plugin>

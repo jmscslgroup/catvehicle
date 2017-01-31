@@ -65,6 +65,7 @@
   <run_depend>sicktoolbox</run_depend>
   <run_depend>sicktoolbox_wrapper</run_depend>
   <run_depend>std_msgs</run_depend>
+  <run_depend>obstaclestopper</run_depend>
   <run_depend>tf</run_depend>
   <run_depend>transmission_interface</run_depend>
   <run_depend>velocity_controllers</run_depend>

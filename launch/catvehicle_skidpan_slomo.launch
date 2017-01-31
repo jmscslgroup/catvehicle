@@ -42,6 +42,14 @@ roslaunch catvehicle catvehicle_skidpan.launch
 	  <arg name="debug" default="false"/>
       <arg name="extra_gazebo_args" default="--seed 0"/>
 
+      <!-- change these defaults here, or as a cmd line arg, in order to turn off   -->
+      <!--   sensors that you aren't using, thus freeing up computational resources -->
+      <!--   and reducing storage space for your bagfiles -->
+      <arg name="front_laser_points" default="true"/>
+      <arg name="velodyne_points" default="true"/>
+      <arg name="camera_right" default="true"/>
+      <arg name="camera_left" default="true"/>
+
 <param name="use_sim_time" value="true"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -56,7 +64,7 @@ roslaunch catvehicle catvehicle_skidpan.launch
 
 <group ns="catvehicle">
 <param name="robot_description"
-         command="$(find xacro)/xacro.py '$(find catvehicle)/urdf/catvehicle.xacro' roboname:='catvehicle'" />
+         command="$(find xacro)/xacro.py '$(find catvehicle)/urdf/catvehicle.xacro' roboname:='catvehicle' front_laser_points:='$(arg front_laser_points)' velodyne_points:='$(arg velodyne_points)' camera_right:='$(arg camera_right)' camera_left:='$(arg camera_left)'" />
 <include file="$(find catvehicle)/launch/catvehicle_slomo.launch">
     <arg name="robot_name" value="catvehicle"/>
     <arg name="init_pose" value="-x 1 -y 1 -z 0"/>

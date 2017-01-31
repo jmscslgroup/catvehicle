@@ -35,6 +35,14 @@ This launch file loads the worlds and models for the catvehicle
 	  <arg name="headless" default="false"/>
 	  <arg name="debug" default="false"/>
 
+      <!-- change these defaults here, or as a cmd line arg, in order to turn off   -->
+      <!--   sensors that you aren't using, thus freeing up computational resources -->
+      <!--   and reducing storage space for your bagfiles -->
+      <arg name="front_laser_points" default="true"/>
+      <arg name="velodyne_points" default="true"/>
+      <arg name="camera_right" default="true"/>
+      <arg name="camera_left" default="true"/>
+
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find catvehicle)/worlds/canyonview_field.world"/>
     <arg name="debug" value="$(arg debug)" />
@@ -46,7 +54,7 @@ This launch file loads the worlds and models for the catvehicle
 
 <group ns="catvehicle">
  <param name="robot_description"
-         command="$(find xacro)/xacro.py '$(find catvehicle)/urdf/catvehicle.xacro' roboname:='catvehicle'" />
+         command="$(find xacro)/xacro.py '$(find catvehicle)/urdf/catvehicle.xacro' roboname:='catvehicle' front_laser_points:='$(arg front_laser_points)' velodyne_points:='$(arg velodyne_points)' camera_right:='$(arg camera_right)' camera_left:='$(arg camera_left)'" />
 
 <include file="$(find catvehicle)/launch/catvehicle.launch">
     <arg name="robot_name" value="catvehicle"/>

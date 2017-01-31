@@ -62,11 +62,16 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
   <xacro:property name="front_bumper_height" value="${car_height/2}"/>
   <xacro:property name="sensor_box" value="0.25"/>
   <xacro:property name="sensor_box2" value="0.01"/>
+  <xacro:property name="camera_box" value="0.1"/>
   <xacro:property name="tyre_height" value="-0.696"/>
   <xacro:property name="str_length" value="0.01"/>
   <xacro:property name="str_radius" value="0.1"/>
   <xacro:property name="str_angle" value="0.6"/>
   <xacro:property name="car_width" value="1.301"/>
+  <xacro:property name="front_laser_points" value="$(arg front_laser_points)"/>
+  <xacro:property name="velodyne_points" value="$(arg velodyne_points)"/>
+  <xacro:property name="camera_right" value="$(arg camera_right)"/>
+  <xacro:property name="camera_left" value="$(arg camera_left)"/>
   <xacro:property name="tyre_origin">
 	<origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
   </xacro:property>
@@ -77,7 +82,19 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
         <origin xyz="0 0 0" rpy="0 0 ${-PI/2}"/>
   </xacro:property>
   
-	<xacro:include filename="$(find catvehicle)/urdf/catvehicle_slipping.gazebo"/>
+	<xacro:include filename="$(find catvehicle)/urdf/catvehicle.gazebo"/>
+    <xacro:if value="${front_laser_points}">
+    	<xacro:include filename="$(find catvehicle)/urdf/catvehicle_front_laser_points.gazebo"/>
+    </xacro:if>
+    <xacro:if value="${velodyne_points}">
+    	<xacro:include filename="$(find catvehicle)/urdf/catvehicle_velodyne_points.gazebo"/>
+    </xacro:if>
+    <xacro:if value="${camera_right}">
+    	<xacro:include filename="$(find catvehicle)/urdf/catvehicle_right_camera.gazebo"/>
+    </xacro:if>
+    <xacro:if value="${camera_left}">
+    	<xacro:include filename="$(find catvehicle)/urdf/catvehicle_left_camera.gazebo"/>
+    </xacro:if>
 
 
 
@@ -375,8 +392,67 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
 
 
 
-<!-- Camera-->
+<!-- Cameras-->
 
+<joint name="camera_right_joint" type="fixed">
+<origin xyz="-0.75 -${car_width/2} ${0.725 + camera_box/2 + 1.25}" rpy="0 0 -${PI/2}"/>
+	<axis xyz="0 0 1"/>
+	<parent link="base_link"/>
+	<child link="camera_right_link"/>
+</joint>
+
+<link name="camera_right_link">
+	<collision>
+	  <origin xyz="0 0 0" rpy="0 0 0"/>
+	  <geometry>
+	   <box size="${camera_box} ${camera_box} ${camera_box}"/>
+	  </geometry>
+	</collision>
+
+	<visual>
+	  <origin xyz="0 0 0" rpy="0 0 0"/>
+	  <geometry>
+	  <box size="${camera_box} ${camera_box} ${camera_box}"
+/>
+          </geometry>
+	</visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+</link>
+
+<joint name="camera_left_joint" type="fixed">
+<origin xyz="-0.75 ${car_width/2} ${0.725 + camera_box/2 + 1.25}" rpy="0 0 ${PI/2}"/>
+	<axis xyz="0 0 1"/>
+	<parent link="base_link"/>
+	<child link="camera_left_link"/>
+</joint>
+
+<link name="camera_left_link">
+	<collision>
+	  <origin xyz="0 0 0" rpy="0 0 0"/>
+	  <geometry>
+	   <box size="${camera_box} ${camera_box} ${camera_box}"/>
+	  </geometry>
+	</collision>
+
+	<visual>
+	  <origin xyz="0 0 0" rpy="0 0 0"/>
+	  <geometry>
+	  <box size="${camera_box} ${camera_box} ${camera_box}"
+/>
+          </geometry>
+	</visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+</link>
 
 
 <joint name="camera_joint" type="fixed">
@@ -415,14 +491,14 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
 
 
 
-<joint name="laser_joint" type="fixed">
+<joint name="velodyne_joint" type="fixed">
 	<origin xyz="0 0 ${sensor_box/2 + 0.01}" rpy="0 0 0"/>
 	<axis xyz="0 0 1"/>
 	<parent link="camera_link"/>
-	<child link="laser_link"/>
+	<child link="velodyne_link"/>
 </joint>
 
-<link name="laser_link">
+<link name="velodyne_link">
         <collision>
           <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry>
