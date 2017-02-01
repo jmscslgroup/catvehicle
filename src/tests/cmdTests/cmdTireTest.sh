@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NS=azcar_sim$1
+NS=catvehicle$1
 CL=front_left_steering_position_controller
 CR=front_right_steering_position_controller
 R=10.0
