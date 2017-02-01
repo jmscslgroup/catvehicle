@@ -129,8 +129,6 @@ int main( int argc, char **argv )
 // TODO: make this not just a float value
   	ros::Publisher dist_pub = n.advertise<std_msgs::Float32>(dist_topic, 1);
   	ros::Publisher angle_pub = n.advertise<std_msgs::Float32>(angle_topic, 1);
-//  	ros::Publisher vel_pub = n.advertise<std_msgs::Float32>("/azcar_sim/vel", 100);
-//  	ros::Publisher accel_pub = n.advertise<std_msgs::Float32>("/azcar_sim/accel", 100);
 
   	// we also want to subscribe to the signaller
   	ros::Subscriber sub = n.subscribe(scan_topic, 1, &scanCallback);

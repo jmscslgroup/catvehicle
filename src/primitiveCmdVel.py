@@ -48,11 +48,11 @@ class primitiveCmdVel:
         self.pub_cmd_vel.publish(msg)
         
 def usage():
-    print('primitiveCmdVel -n azcar_sim')
+    print('primitiveCmdVel -n catvehicle')
 
 
 def main(argv):
-    ns='azcar_sim'
+    ns='catvehicle'
     try:
         opts, args = getopt.getopt(argv, "hn:", ["help", "namespace="])
     except getopt.GetoptError:

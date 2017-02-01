@@ -143,7 +143,7 @@ class cmdvel2gazebo:
             self.pub_steerL.publish(msgSteer)
             self.pub_steerR.publish(msgSteer)
 def usage():
-    print('cmdvel2gazebo -n azcar_sim')
+    print('cmdvel2gazebo -n catvehicle')
 
 
 def main(argv):
@@ -158,7 +158,7 @@ def main(argv):
 if __name__ == '__main__':
     main(sys.argv[1:])
     try:
-        listener('azcar_sim')
+        listener('catvehicle')
     except rospy.ROSInterruptException:
         pass
 

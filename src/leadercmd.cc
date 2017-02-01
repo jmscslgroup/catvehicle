@@ -21,7 +21,7 @@ int main( int argc, char **argv )
 
 	ros::NodeHandle n;
     
-    std::string leader_InputVel_topic="/azcar_sim/cmd_vel";
+    std::string leader_InputVel_topic="/catvehicle/cmd_vel";
     
 
     ros::Publisher leader_vel_pub = n.advertise<geometry_msgs::Twist>(leader_InputVel_topic, 1);
