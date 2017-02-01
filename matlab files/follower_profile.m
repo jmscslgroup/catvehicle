@@ -10,7 +10,7 @@ function follower_profile(ROS_IP, lead, follower)
 
 %If number of argument is not two, flag message and exit.
 if nargin < 2
-    sprintf('Uage: velocityProfiler(192.168.0.32, azcar_sim)');
+    sprintf('Usage: velocityProfiler(192.168.0.32, catvehicle)');
     return;
 end
 
@@ -56,9 +56,9 @@ velMsgs2 = rosmessage(velpub2);
 for i=1:length(t)
     velMsgs1.Linear.X = input(i);
     velMsgs1.Angular.Z = 0.0;
-    %Publish on the topic /azcar_sim/cmd_vel
+    %Publish on the topic /catvehicle/cmd_vel
     send(velpub1, velMsgs1);
-    %Read from the topic /azcar_sim/speed
+    %Read from the topic /catvehicle/speed
     speedata1 = receive(speedsub1,10);
     distance = receive(distanceEstimaterSub,10);
     x = distance.Data;

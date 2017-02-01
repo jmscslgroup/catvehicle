@@ -2,7 +2,7 @@
 function velCapture(ROS_IP, roboname)
 %If number of argument is not two, flag message and exit.
 if nargin < 2
-    disp('Uage: velocityProfiler(192.168.0.32, azcar_sim)');
+    disp('Uage: velocityProfiler(192.168.0.32, catvehicle)');
     return;
 end
 close all;
@@ -13,7 +13,7 @@ master_uri= strcat('http://',ROS_IP);
 master_uri = strcat(master_uri,':11311');
 %rosinit(master_uri);
 
-%get handle for /azcar_sim/vel topic for subscribing to the data
+%get handle for /catvehicle/vel topic for subscribing to the data
 speedsub = rossubscriber(strcat(modelname,'/vel'));
 dt = datestr(now,'mmmm-dd-yyyy-HH-MM-SS');
 sprintf('Velocity capture starts at %s',dt)

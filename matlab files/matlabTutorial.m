@@ -3,9 +3,9 @@
 % See copyright file
 
 % load the bagfile
-bagfile=rosbag('azcar_tutorial.bag');
-% select only the /azcar_sim/odom topic
-odomBag=select(bagfile,'Topic','/azcar_sim/odom');
+bagfile=rosbag('catvehicle_tutorial.bag');
+% select only the /catvehicle/odom topic
+odomBag=select(bagfile,'Topic','/catvehicle/odom');
 % extract timeseries data (this will take some time)
 odom = timeseries(odomBag,'Pose.Pose.Position.X','Pose.Pose.Position.Y');
 
@@ -17,7 +17,7 @@ legend({'X position','Y position'})
 
 %% Select the commanded input value
 % where are data interesting? Let's look at the cmd_vel_safe inputs
-cmd_vel_safeBag=select(bagfile,'Topic','/azcar_sim/cmd_vel_safe');
+cmd_vel_safeBag=select(bagfile,'Topic','/catvehicle/cmd_vel_safe');
 % this will take some time
 cmd_vel_safe=timeseries(cmd_vel_safeBag,'Linear.X','Angular.Z');
 

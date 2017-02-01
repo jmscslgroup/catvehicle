@@ -1,5 +1,5 @@
-%Matlab scripto to publish velocity on /azcar_sim/cmd_vel topic and
-%subscribe to azcar_sim/speed topic
+%Matlab scripto to publish velocity on /catvehicle/cmd_vel topic and
+%subscribe to catvehicle/speed topic
 
 %Developed by Rahul Kumar Bhadani <rahulbhadani@email.arizona.edu>
 
@@ -10,7 +10,7 @@ function velocityProfiler(ROS_IP, roboname, tire_angle)
 
 %If number of argument is not two, flag message and exit.
 if nargin < 2
-    sprintf('Uage: velocityProfiler(192.168.0.32, azcar_sim)');
+    sprintf('Uage: velocityProfiler(192.168.0.32, catvehicle)');
     return;
 end
 
@@ -25,10 +25,10 @@ master_uri= strcat('http://',ROS_IP);
 master_uri = strcat(master_uri,':11311');
 rosinit(master_uri);
 
-%get handle for /azcar_sim/cmd_vel topic for publishing the data
+%get handle for /catvehicle/cmd_vel topic for publishing the data
 velpub = rospublisher(strcat(modelname,'/cmd_vel'),rostype.geometry_msgs_Twist);
 
-%get handle for /azcar_sim/vel topic for subscribing to the data
+%get handle for /catvehicle/vel topic for subscribing to the data
 speedsub = rossubscriber(strcat(modelname,'/vel'));
 
 %Discretize timestamp
@@ -51,9 +51,9 @@ velMsgs = rosmessage(velpub);
 for i=1:length(t)
     velMsgs.Linear.X = input(i);
     velMsgs.Angular.Z = tire_angle;
-    %Publish on the topic /azcar_sim/cmd_vel
+    %Publish on the topic /catvehicle/cmd_vel
     send(velpub, velMsgs);
-    %Read from the topic /azcar_sim/speed
+    %Read from the topic /catvehicle/speed
     speedata = receive(speedsub,10);
     output(i) = speedata.Linear.X;
 end
