@@ -29,16 +29,16 @@ or whenever gazebo is not running
 
 How to execute it:
 =================
-roslaunch azcar_sim robotviz.launch
+roslaunch catvehicle robotviz.launch
 
 -->
 
 <launch>
 
-<arg name="robot_name" default="azcar_sim" />
+<arg name="robot_name" default="catvehicle" />
 
 <!-- get xml file from the urdf folder -->
-<param name="azcar_sim/robot_description" command="cat $(find azcar_sim)/urdf/azcar_urdf.xml"/>
+<param name="catvehicle/robot_description" command="cat $(find catvehicle)/urdf/catvehicle_urdf.xml"/>
 
 
 </launch>

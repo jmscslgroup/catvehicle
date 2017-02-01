@@ -3,7 +3,7 @@
 NS=/$1
 
 if [ $# -eq 1 ]; then
-  NS=/azcar_sim
+  NS=/catvehicle
 fi
 
 

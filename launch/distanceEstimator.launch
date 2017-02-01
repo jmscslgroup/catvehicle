@@ -31,7 +31,7 @@ This launch file loads the worlds and models for the azcar
 
 	  <arg name="robot" default="catvehicle"/>
 
-<node pkg="azcar_sim" type="distanceEstimator" name="distanceEstimator" output="screen"
+<node pkg="catvehicle" type="distanceEstimator" name="distanceEstimator" output="screen"
             required="true">
 	<param name="scan_topic" value="/scan"/>
 	<param name="scan_topic" value="/$(arg robot)/scan"/>

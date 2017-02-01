@@ -1,7 +1,7 @@
 #!/bin/bash
 
-./cmdSimpleTest.sh azcar_sim
+./cmdSimpleTest.sh catvehicle
 
-./cmdTireTest.sh azcar_sim
+./cmdTireTest.sh catvehicle
 
 

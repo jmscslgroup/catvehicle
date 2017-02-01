@@ -68,7 +68,7 @@ titles{3} = 'Run 3';
 
 %% grab data inputs of cmd_vel_safe
 for i=1:length(bagfiles)
-    bagselect = select(bagfiles{i}, 'Topic', '/azcar_sim/odom');
+    bagselect = select(bagfiles{i}, 'Topic', '/catvehicle/odom');
     ts{i} = timeseries(bagselect, 'Pose.Pose.Position.X', 'Pose.Pose.Position.Y');
 end
 

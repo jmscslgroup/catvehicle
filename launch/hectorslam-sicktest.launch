@@ -66,7 +66,7 @@ roslaunch catvehicle catvehicle_skidpan.launch
 
   <node pkg="hector_geotiff" type="geotiff_node" name="hector_geotiff_node" output="screen" launch-prefix="nice -n 15">
     <remap from="map" to="/dynamic_map" />
-    <param name="map_file_path" type="string" value="$(find azcar_sim)/maps" />
+    <param name="map_file_path" type="string" value="$(find catvehicle)/maps" />
     <param name="map_file_base_name" type="string" value="hector_slam_map" />
     <param name="geotiff_save_period" type="double" value="0" />
     <param name="draw_background_checkerboard" type="bool" value="true" />

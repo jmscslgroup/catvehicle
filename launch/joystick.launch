@@ -24,27 +24,27 @@ TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 
 Summary: 
 =======
-This launch file loads the worlds and models for the azcar
+This launch file loads the worlds and models for the catvehicle
 
 How to execute it:
 =================
-roslaunch azcar_sim joystick.launch
+roslaunch catvehicle joystick.launch
 
 -->
 
 <launch>
 
-<arg name="robot_name" default="azcar_sim" />
+<arg name="robot_name" default="catvehicle" />
 
 <!-- include information for the joystick, etc. -->
 <node pkg="joy" type="joy_node" name="joy_node" output="screen"
             required="true">
 </node>
 
-<node pkg="azcar_sim" type="joy2cmdvel.py" name="joy2cmdvel" output="screen"
+<node pkg="catvehicle" type="joy2cmdvel.py" name="joy2cmdvel" output="screen"
             required="true">
 	<param name="namespace" value="/$(arg robot_name)"/>
-    <remap from="/azcar_sim/cmd_vel" to="/$(arg robot_name)/cmd_vel" />
+    <remap from="/catvehicle/cmd_vel" to="/$(arg robot_name)/cmd_vel" />
 </node>
 
 

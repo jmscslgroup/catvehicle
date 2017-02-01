@@ -37,7 +37,7 @@ class joy2cmdvel:
     def __init__(self):
         rospy.init_node('joy2cmdvel', anonymous=True)
 
-        self.ns = rospy.get_param("~namespace","azcar_sim")
+        self.ns = rospy.get_param("~namespace","catvehicle")
         self.velmax = rospy.get_param("~velmax",3)
 
         rospy.loginfo(rospy.get_caller_id() + " startup in namespace {0} with max velocity {1}".format(self.ns,self.velmax))
@@ -61,7 +61,7 @@ class joy2cmdvel:
         self.pub_cmdvel.publish(msgTwist)
         
 def usage():
-    print('joy2cmdvel -n azcar_sim')
+    print('joy2cmdvel -n catvehicle')
 
 
 def main(argv):
