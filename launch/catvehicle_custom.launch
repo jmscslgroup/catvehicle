@@ -43,6 +43,10 @@ This launch file loads the worlds and models for the catvehicle
       <arg name="velodyne_points" default="true"/>
       <arg name="camera_right" default="true"/>
       <arg name="camera_left" default="true"/>
+      <!-- change these defaults here, to see further left with the velodyne   -->
+      <arg name="velodyne_max_angle" default="0.4"/>
+      <!-- change these defaults here, to see further right with the velodyne   -->
+      <arg name="velodyne_min_angle" default="-0.4"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find catvehicle)/worlds/$(arg worldfile)"/>

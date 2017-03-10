@@ -49,8 +49,8 @@ Sensors are included separately, based on the arguments passed to the xacro incl
                                 <horizontal>
                                        <samples>100</samples>
                                            <resolution>1</resolution>
-                                            <min_angle>-0.4</min_angle>
-                                            <max_angle>0.4</max_angle>
+                                            <min_angle>${velodyne_min_angle}</min_angle>
+                                            <max_angle>${velodyne_max_angle}</max_angle>
                                 </horizontal>
 				<vertical>
 					<samples>20</samples>

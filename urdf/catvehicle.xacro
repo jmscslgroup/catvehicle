@@ -40,6 +40,12 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
 
 <robot name="$(arg roboname)" xmlns:xacro="http://www.ros.org/wiki/xacro">
   
+  <xacro:arg name="camera_left" default="true"/>
+  <xacro:arg name="camera_right" default="true"/>
+  <xacro:arg name="velodyne_points" default="true"/>
+  <xacro:arg name="front_laser_points" default="true"/>
+
+
   <xacro:property name="PI" value="3.1415926835897931"/>
 <!--  <xacro:property name="base_height" value="0"/> -->
   <xacro:property name="base_height" value="1.0639"/>
@@ -87,6 +93,14 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
     	<xacro:include filename="$(find catvehicle)/urdf/catvehicle_front_laser_points.gazebo"/>
     </xacro:if>
     <xacro:if value="${velodyne_points}">
+      <!-- You can pass parameters in order to change the max/min
+           horizontal angles of the velodyne sensors. These are interpreted 
+           in the velodyne_points gazebo file -->
+      <xacro:arg name="velodyne_min_angle" default="-0.4"/>
+      <xacro:arg name="velodyne_max_angle" default="0.4"/>
+      <xacro:property name="velodyne_min_angle" value="$(arg velodyne_min_angle)"/>
+      <xacro:property name="velodyne_max_angle" value="$(arg velodyne_max_angle)"/>
+
     	<xacro:include filename="$(find catvehicle)/urdf/catvehicle_velodyne_points.gazebo"/>
     </xacro:if>
     <xacro:if value="${camera_right}">
