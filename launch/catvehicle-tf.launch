@@ -10,31 +10,31 @@
 </include>
 
 <node pkg="tf" type="static_transform_publisher" name="laser2front_laser_link_tf_$(arg robot_name)" 
-    args="0 0 0 0 0 0 /catvehicle/front_laser_link /laser 75"/>
+    args="0 0 0 0 0 0 catvehicle/front_laser_link laser 75"/>
 
 <node pkg="tf" type="static_transform_publisher" name="baselink2velodyne_$(arg robot_name)" 
-    args="0 0 1.7 0 0 0 /catvehicle/base_link /velodyne 10"/>
+    args="0 0 1.7 0 0 0 catvehicle/base_link velodyne 10"/>
 
 <!-- convert from the velodyne to a /catvehicle/velodyne_link frame -->
 <node pkg="tf" type="static_transform_publisher" name="velodyne2velodyne_link_$(arg robot_name)" 
-    args="0 0 0 0 0 0 /velodyne /catvehicle/velodyne_link 10"/>
+    args="0 0 0 0 0 0 velodyne catvehicle/velodyne_link 10"/>
 
 <node pkg="tf" type="static_transform_publisher" name="baselinkr2front_laser_link_tf_$(arg robot_name)" 
-    args="2.5 0 0 0 0 0 /catvehicle/base_link /catvehicle/front_laser_link 75"/>
+    args="2.5 0 0 0 0 0 catvehicle/base_link catvehicle/front_laser_link 75"/>
 
 <node pkg="tf" type="static_transform_publisher" name="baselink2odom_tf_$(arg robot_name)" 
-    args="0 0 -2.5 0 0 0 /catvehicle/base_link /catvehicle/odom 10"/>
+    args="0 0 -2.5 0 0 0 catvehicle/base_link catvehicle/odom 75"/>
 
 <node pkg="tf" type="static_transform_publisher" name="baselink2leftFtire_tf_$(arg robot_name)" 
-    args="$(arg car_length) -$(arg car_width) $(arg tyre_height) 0 0 0 /catvehicle/base_link /catvehicle/front_left_wheel_link 10"/>
+    args="$(arg car_length) -$(arg car_width) $(arg tyre_height) 0 0 0 catvehicle/base_link catvehicle/front_left_wheel_link 10"/>
 
 <node pkg="tf" type="static_transform_publisher" name="baselink2rightFtire_tf_$(arg robot_name)" 
-    args="$(arg car_length) $(arg car_width) $(arg tyre_height) 0 0 0 /catvehicle/base_link /catvehicle/front_right_wheel_link 10"/>
+    args="$(arg car_length) $(arg car_width) $(arg tyre_height) 0 0 0 catvehicle/base_link catvehicle/front_right_wheel_link 10"/>
 
 <node pkg="tf" type="static_transform_publisher" name="baselink2leftRtire_tf_$(arg robot_name)" 
-    args="-$(arg car_length) -$(arg car_width) $(arg tyre_height) 0 0 0 /catvehicle/base_link /catvehicle/back_left_wheel_link 10"/>
+    args="-$(arg car_length) -$(arg car_width) $(arg tyre_height) 0 0 0 catvehicle/base_link catvehicle/back_left_wheel_link 10"/>
 
 <node pkg="tf" type="static_transform_publisher" name="baselink2rightRtire_tf_$(arg robot_name)" 
-    args="-$(arg car_length) $(arg car_width) $(arg tyre_height) 0 0 0 /catvehicle/base_link /catvehicle/back_right_wheel_link 10"/>
+    args="-$(arg car_length) $(arg car_width) $(arg tyre_height) 0 0 0 catvehicle/base_link catvehicle/back_right_wheel_link 10"/>
 
 </launch>
