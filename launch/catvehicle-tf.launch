@@ -16,7 +16,7 @@
     args="0 0 1.7 0 0 0 /catvehicle/base_link /velodyne 10"/>
 
 <!-- convert from the velodyne to a /catvehicle/velodyne_link frame -->
-<node pkg="tf" type="static_transform_publisher" name="baselink2velodyne_$(arg robot_name)" 
+<node pkg="tf" type="static_transform_publisher" name="velodyne2velodyne_link_$(arg robot_name)" 
     args="0 0 0 0 0 0 /velodyne /catvehicle/velodyne_link 10"/>
 
 <node pkg="tf" type="static_transform_publisher" name="baselinkr2front_laser_link_tf_$(arg robot_name)" 
