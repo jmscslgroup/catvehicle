@@ -67,7 +67,7 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
   <xacro:property name="car_to_bumper" value="2.4"/>
   <xacro:property name="front_bumper_height" value="${car_height/2}"/>
   <xacro:property name="sensor_box" value="0.25"/>
-  <xacro:property name="sensor_box2" value="0.01"/>
+  <xacro:property name="sensor_box2" value="0.31"/>
   <xacro:property name="camera_box" value="0.1"/>
   <xacro:property name="tyre_height" value="-0.696"/>
   <xacro:property name="str_length" value="0.01"/>
@@ -523,7 +523,7 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
         <visual>
           <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry>
-           <mesh filename="package://catvehicle/meshes/hokuyo.dae"/>
+           <box size="${sensor_box} ${sensor_box} ${sensor_box}"/>
           </geometry>
         </visual>
 
