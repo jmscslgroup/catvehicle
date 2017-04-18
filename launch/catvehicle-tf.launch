@@ -46,11 +46,15 @@ roslaunch catvehicle catvehicle-tf.launch
 <node pkg="tf" type="static_transform_publisher" name="laser2front_laser_link_tf_$(arg robot_name)" 
     args="0 0 0 0 0 0 catvehicle/front_laser_link laser 75"/>
 
+<!-- removed INS as an option here
 <node pkg="tf" type="static_transform_publisher" name="odom2ins_$(arg robot_name)" 
-    args="-0.4 0 1.15 0 0 0 catvehicle/odom catvehicle/ins 10"/>
+    args="-0.4 0 1.15 0 0 0 catvehicle/odom catvehicle/ins 10"/> -->
 
+<!-- JMS adapted this to refer to base_link rather than ins
 <node pkg="tf" type="static_transform_publisher" name="baselink2velodyne_$(arg robot_name)" 
-    args="1.2 0 0.75 0 0 0 catvehicle/ins velodyne 10"/>
+    args="1.2 0 0.75 0 0 0 catvehicle/ins velodyne 10"/>-->
+<node pkg="tf" type="static_transform_publisher" name="baselink2velodyne_$(arg robot_name)" 
+    args="0.8 0 1.9 0 0 0 catvehicle/base_link velodyne 10"/>
 
 <!-- convert from the velodyne to a /catvehicle/velodyne_link frame -->
 <node pkg="tf" type="static_transform_publisher" name="velodyne2velodyne_link_$(arg robot_name)" 
@@ -59,8 +63,10 @@ roslaunch catvehicle catvehicle-tf.launch
 <node pkg="tf" type="static_transform_publisher" name="baselinkr2front_laser_link_tf_$(arg robot_name)" 
     args="2.8 0 -1.0 0 0 0 catvehicle/velodyne_link catvehicle/front_laser_link 75"/>
 
-<node pkg="tf" type="static_transform_publisher" name="baselink2odom_tf_$(arg robot_name)" 
-    args="-1.25 0 $(arg halftyre_height) 0 0 0 catvehicle/base_link catvehicle/odom 75"/>
+<!-- JMS: Note, I think that if we stop doing this, things will make more sense; should be a tf broadcasted
+    from the odometrybroadcaster_node in a package w/ hwil capabilities -->
+<!--node pkg="tf" type="static_transform_publisher" name="baselink2odom_tf_$(arg robot_name)" 
+    args="-1.25 0 $(arg halftyre_height) 0 0 0 catvehicle/base_link catvehicle/odom 75"/-->
 
 <node pkg="tf" type="static_transform_publisher" name="baselink2leftFtire_tf_$(arg robot_name)" 
     args="$(arg car_length) -$(arg car_width) $(arg tyre_height) 0 0 0 catvehicle/base_link catvehicle/front_left_wheel_link 10"/>
@@ -82,7 +88,6 @@ roslaunch catvehicle catvehicle-tf.launch
 
 <node pkg="tf" type="static_transform_publisher" name="leftFtire2leftFtiresteering_tf_$(arg robot_name)" 
     args="0 0 0 0 0 0 catvehicle/front_left_wheel_link catvehicle/front_left_steering_link 10"/>
-
 
 <node pkg="tf" type="static_transform_publisher" name="velodynelink2cameraleft_tf_$(arg robot_name)" 
     args="-0.56 0.44 0 0 0 0 catvehicle/velodyne_link catvehicle/camera_left_link 5"/>
