@@ -68,8 +68,8 @@ class odom2path:
 
         # Note that we append a new pose to the path ONLY if the position
         # has moved more than 1m from its previous spot (L1 norm)
-        if self.x == None or (abs(self.x - data.pose.pose.position.x) > 1 
-                           or abs(self.y - data.pose.pose.position.y) > 1):
+        if self.x == None or (abs(self.x - data.pose.pose.position.x) > 0.25 
+                           or abs(self.y - data.pose.pose.position.y) > 0.25):
             pose = PoseStamped()
 
             # copy over the values individually
