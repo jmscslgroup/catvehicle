@@ -29,7 +29,7 @@ Follow the tutorials on the CAT Vehicle Testbed group on the CPS Virtual Organiz
 
 # Acknowledgements
 ## License
-Copyright (c) 2013-2017 Arizona Board of Regents
+Copyright (c) 2013-2018 Arizona Board of Regents
 All rights reserved
 
 Permission is hereby granted, without written agreement and without 

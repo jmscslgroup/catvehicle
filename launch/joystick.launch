@@ -35,6 +35,7 @@ roslaunch catvehicle joystick.launch
 <launch>
 
 <arg name="robot_name" default="catvehicle" />
+<arg name="velmax" default="3.0"/>
 
 <!-- include information for the joystick, etc. -->
 <node pkg="joy" type="joy_node" name="joy_node" output="screen"

@@ -1,23 +1,23 @@
 #!/usr/bin/env python
-# 
+#
 # Author: Jonathan Sprinkle
 # Copyright (c) 2015-2016 Arizona Board of Regents
 # All rights reserved.
-# 
-# Permission is hereby granted, without written agreement and without 
+#
+# Permission is hereby granted, without written agreement and without
 # license or royalty fees, to use, copy, modify, and distribute this
-# software and its documentation for any purpose, provided that the 
-# above copyright notice and the following two paragraphs appear in 
+# software and its documentation for any purpose, provided that the
+# above copyright notice and the following two paragraphs appear in
 # all copies of this software.
-# 
-# IN NO EVENT SHALL THE ARIZONA BOARD OF REGENTS BE LIABLE TO ANY PARTY 
-# FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES 
-# ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN 
-# IF THE ARIZONA BOARD OF REGENTS HAS BEEN ADVISED OF THE POSSIBILITY OF 
+#
+# IN NO EVENT SHALL THE ARIZONA BOARD OF REGENTS BE LIABLE TO ANY PARTY
+# FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES
+# ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN
+# IF THE ARIZONA BOARD OF REGENTS HAS BEEN ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
-# 
-# THE ARIZONA BOARD OF REGENTS SPECIFICALLY DISCLAIMS ANY WARRANTIES, 
-# INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY 
+#
+# THE ARIZONA BOARD OF REGENTS SPECIFICALLY DISCLAIMS ANY WARRANTIES,
+# INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
 # AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE PROVIDED HEREUNDER
 # IS ON AN "AS IS" BASIS, AND THE ARIZONA BOARD OF REGENTS HAS NO OBLIGATION
 # TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
@@ -40,7 +40,7 @@ class odom2path:
         self.ns = ns
         rospy.init_node('odom2path', anonymous=True)
 
-        # set so that whenever we receive on the odom topic, 
+        # set so that whenever we receive on the odom topic,
         # the callback method is called
         rospy.Subscriber('odom'.format(ns), Odometry, self.callback)
         # setup the state data for the publisher
@@ -68,8 +68,8 @@ class odom2path:
 
         # Note that we append a new pose to the path ONLY if the position
         # has moved more than 1m from its previous spot (L1 norm)
-        if self.x == None or (abs(self.x - data.pose.pose.position.x) > 0.25 
-                           or abs(self.y - data.pose.pose.position.y) > 0.25):
+        if self.x == None or (abs(self.x - data.pose.pose.position.x) > 1
+                           or abs(self.y - data.pose.pose.position.y) > 1):
             pose = PoseStamped()
 
             # copy over the values individually
@@ -82,7 +82,7 @@ class odom2path:
             pose.pose.orientation.y = float(data.pose.pose.orientation.y)
             pose.pose.orientation.z = float(data.pose.pose.orientation.z)
             pose.pose.orientation.w = float(data.pose.pose.orientation.w)
-        
+
             self.pathMsg.poses.append(pose)
 
             self.x = float(data.pose.pose.position.x)
@@ -101,14 +101,14 @@ def usage():
 
 
 def main(argv):
-    # here we must acquire the ns from the cmd line, so that we can 
+    # here we must acquire the ns from the cmd line, so that we can
     # ensure that we use the right frame for the tf of the path msgs
     ns=''
     try:
         opts, args = getopt.getopt(argv, "hn:", ["help", "namespace="])
     except getopt.GetoptError:
         usage()
-        exit.sys()  
+        exit.sys()
 
     for o, a in opts:
         if o == "help":

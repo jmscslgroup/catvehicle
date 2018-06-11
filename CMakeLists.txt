@@ -72,6 +72,8 @@ target_link_libraries(catvehiclegazebo ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES} $
 add_executable( distanceEstimator src/distanceEstimator.cpp )
 target_link_libraries( distanceEstimator ${catkin_LIBRARIES} )
 
+add_executable( distanceEstimatorSteeringBased src/distanceEstimatorSteeringBased.cpp )
+target_link_libraries( distanceEstimatorSteeringBased ${catkin_LIBRARIES})
 #############
 ## Install ##
 #############

@@ -1,23 +1,23 @@
 #!/usr/bin/env python
-# 
+#
 # Author: Jonathan Sprinkle
 # Copyright (c) 2015 Arizona Board of Regents
 # All rights reserved.
-# 
-# Permission is hereby granted, without written agreement and without 
+#
+# Permission is hereby granted, without written agreement and without
 # license or royalty fees, to use, copy, modify, and distribute this
-# software and its documentation for any purpose, provided that the 
-# above copyright notice and the following two paragraphs appear in 
+# software and its documentation for any purpose, provided that the
+# above copyright notice and the following two paragraphs appear in
 # all copies of this software.
-# 
-# IN NO EVENT SHALL THE ARIZONA BOARD OF REGENTS BE LIABLE TO ANY PARTY 
-# FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES 
-# ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN 
-# IF THE ARIZONA BOARD OF REGENTS HAS BEEN ADVISED OF THE POSSIBILITY OF 
+#
+# IN NO EVENT SHALL THE ARIZONA BOARD OF REGENTS BE LIABLE TO ANY PARTY
+# FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES
+# ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN
+# IF THE ARIZONA BOARD OF REGENTS HAS BEEN ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
-# 
-# THE ARIZONA BOARD OF REGENTS SPECIFICALLY DISCLAIMS ANY WARRANTIES, 
-# INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY 
+#
+# THE ARIZONA BOARD OF REGENTS SPECIFICALLY DISCLAIMS ANY WARRANTIES,
+# INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
 # AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE PROVIDED HEREUNDER
 # IS ON AN "AS IS" BASIS, AND THE ARIZONA BOARD OF REGENTS HAS NO OBLIGATION
 # TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
@@ -25,7 +25,7 @@
 # This node generates cmd_vel inputs to the vehicle in order to make it move
 # around. Use the arrow keys to make the vehicle turn its wheels, move forward,
 # or backward. If you want to move forward (but turn left), first press the left
-# arrow key, then press up. 
+# arrow key, then press up.
 
 import rospy
 from geometry_msgs.msg import Twist
@@ -46,7 +46,7 @@ class primitiveCmdVel:
         msg.linear.x = self.x
         msg.angular.z = self.z
         self.pub_cmd_vel.publish(msg)
-        
+
 def usage():
     print('primitiveCmdVel -n catvehicle')
 
@@ -58,7 +58,7 @@ def main(argv):
     except getopt.GetoptError:
         usage()
         exit.sys()
-    
+
     stdscr = curses.initscr()
     node = primitiveCmdVel(ns)
     while not rospy.is_shutdown():

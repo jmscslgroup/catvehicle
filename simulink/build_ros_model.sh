@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# Copyright 2014-2015 The MathWorks, Inc.
-ARCHIVE=$1
-CATKIN_WS=$2
+# Copyright 2014-2016 The MathWorks, Inc.
+ARCHIVE="$1"
+CATKIN_WS="$2"
 
 catkinWorkspaceHelp() {
    echo ""
@@ -35,7 +35,7 @@ toLowerCase() {
    echo $1 | tr '[A-Z]' '[a-z]'
 }
 
-if [ -z $1 ] || ([ ! -z $1 ] && [ $1 = "-h" ] || [ $1 = "--help" ]) ; then
+if [ -z "$1" ] || ([ ! -z "$1" ] && [ "$1" = "-h" ] || [ "$1" = "--help" ]) ; then
    fullUsage
    exit 0
 fi
@@ -82,7 +82,7 @@ if [ ${ARCHIVE: -4} != ".tgz" ] ; then
 fi
 
 # Check if $ARCHIVE is a valid zip file
-gzip -t $ARCHIVE 2> /dev/null
+gzip -t "$ARCHIVE" 2> /dev/null
 VALID_ZIP=$?
 if [ $VALID_ZIP -ne 0 ] ; then
    echo "The archive, "$ARCHIVE", is not a valid .tgz (tar zip) file."
@@ -93,7 +93,7 @@ fi
 
 # Check for one of the standard files generated from Simulink
 # (ert_main.cpp)
-tar ztf $ARCHIVE | grep -q ert_main.cpp 2> /dev/null
+tar ztf "$ARCHIVE" | grep -q ert_main.cpp 2> /dev/null
 VALID_SIMULINK_ARCHIVE=$?
 if [ $VALID_SIMULINK_ARCHIVE -ne 0 ] ; then
    echo "The archive, "$ARCHIVE", is not a valid Simulink model archive (.tgz file)."
@@ -105,14 +105,14 @@ fi
 # $ARCHIVE appears to be valid.
 # Extract and build it
 
-MODEL_NAME=$(toLowerCase $(basename $ARCHIVE .tgz))
+MODEL_NAME=$(toLowerCase $(basename "$ARCHIVE" .tgz))
 PROJECT_DIR="$CATKIN_WS/src/$MODEL_NAME"
 echo "Catkin project directory: $PROJECT_DIR"
 
 # Extract files to catkin project directory
 mkdir -p "$PROJECT_DIR"
 rm -fr "$PROJECT_DIR"/*
-tar -C "$PROJECT_DIR" -xf $ARCHIVE
+tar -C "$PROJECT_DIR" -xf "$ARCHIVE"
 
 # Ensure that catkin_make will rebuild the executable
 touch "$PROJECT_DIR"/*.cpp

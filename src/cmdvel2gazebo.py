@@ -1,23 +1,23 @@
 #!/usr/bin/env python
-# 
+#
 # Author: Jonathan Sprinkle
 # Copyright (c) 2015-2016 Arizona Board of Regents
 # All rights reserved.
-# 
-# Permission is hereby granted, without written agreement and without 
+#
+# Permission is hereby granted, without written agreement and without
 # license or royalty fees, to use, copy, modify, and distribute this
-# software and its documentation for any purpose, provided that the 
-# above copyright notice and the following two paragraphs appear in 
+# software and its documentation for any purpose, provided that the
+# above copyright notice and the following two paragraphs appear in
 # all copies of this software.
-# 
-# IN NO EVENT SHALL THE ARIZONA BOARD OF REGENTS BE LIABLE TO ANY PARTY 
-# FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES 
-# ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN 
-# IF THE ARIZONA BOARD OF REGENTS HAS BEEN ADVISED OF THE POSSIBILITY OF 
+#
+# IN NO EVENT SHALL THE ARIZONA BOARD OF REGENTS BE LIABLE TO ANY PARTY
+# FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES
+# ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN
+# IF THE ARIZONA BOARD OF REGENTS HAS BEEN ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
-# 
-# THE ARIZONA BOARD OF REGENTS SPECIFICALLY DISCLAIMS ANY WARRANTIES, 
-# INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY 
+#
+# THE ARIZONA BOARD OF REGENTS SPECIFICALLY DISCLAIMS ANY WARRANTIES,
+# INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
 # AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE PROVIDED HEREUNDER
 # IS ON AN "AS IS" BASIS, AND THE ARIZONA BOARD OF REGENTS HAS NO OBLIGATION
 # TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
@@ -50,7 +50,7 @@ class cmdvel2gazebo:
         self.x = 0
         self.z = 0
 
-        # TODO: get wheelbase and treadwidth from SDF or 
+        # TODO: get wheelbase and treadwidth from SDF or
         #       params database instead of hardcoded here
 
         # car Wheelbase (in m)
@@ -81,7 +81,7 @@ class cmdvel2gazebo:
         self.maxsteer=math.atan2(self.L,rIdeal)
         # the ideal max steering angle we can command is now set
         rospy.loginfo(rospy.get_caller_id() + " maximum ideal steering angle set to {0}.".format(self.maxsteer))
-        
+
 
     def callback(self,data):
         # 2.8101 is the gain factor in order to account for mechanical reduction of the tyres
@@ -97,7 +97,7 @@ class cmdvel2gazebo:
         # that the tire angle will not change
         # NOTE: we only set self.x to be 0 after 200ms of timeout
         if rospy.Time.now() - self.lastMsg > self.timeout:
-            rospy.loginfo(rospy.get_caller_id() + " timed out waiting for new input, setting velocity to 0.")
+           # rospy.loginfo(rospy.get_caller_id() + " timed out waiting for new input, setting velocity to 0.")
             self.x = 0
             return
 
@@ -126,7 +126,7 @@ class cmdvel2gazebo:
             # the left tire's angle is solved directly from geometry
             msgSteerL.data = math.atan2(L,rL)*math.copysign(1,self.z)
             self.pub_steerL.publish(msgSteerL)
-    
+
             # the right tire's angle is solved directly from geometry
             msgSteerR.data = math.atan2(L,rR)*math.copysign(1,self.z)
             self.pub_steerR.publish(msgSteerR)
@@ -150,7 +150,7 @@ def main(argv):
     # we eventually get the ns (namespace) from the ROS parameter server for this node
     ns=''
     node = cmdvel2gazebo(ns)
-    rate = rospy.Rate(100) # run at 10Hz
+    rate = rospy.Rate(100) # run at 100Hz
     while not rospy.is_shutdown():
         node.publish()
         rate.sleep()
