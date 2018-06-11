@@ -229,6 +229,7 @@ http://gazebosim.org/tutorials/?tut=ros_control#Prerequisites
   <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
     <robotNamespace>/$(arg roboname)</robotNamespace>
     <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    <legacyModeNS>true</legacyModeNS>
   </plugin>
 </gazebo>
 

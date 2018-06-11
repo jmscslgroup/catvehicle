@@ -40,6 +40,7 @@
     type: velocity_controllers/JointVelocityController
     joint: back_left_wheel_joint
     pid: {p: 100.0, i: 0.01, d: 10.0}
+
   joint2_velocity_controller:
     type: velocity_controllers/JointVelocityController
     joint: back_right_wheel_joint
@@ -69,3 +70,24 @@
     joint: front_right_steering_joint
     pid: {p: 100.0, i: 0.01, d: 10.0}
 
+  #Rahul Kumar Bhadani:
+  #Gazebo 9.0/ROS Melodic requires pidgains set for each joint
+  #TODO: Find out correct PID gains (06/11/2018)(mm/dd/yyyy)
+  /gazebo_ros_control:
+    pid_gains:
+        back_left_wheel_joint:
+            p: 100.0
+           # i: 0.01
+           # d: 10.0
+        back_right_wheel_joint:
+            p: 100.0
+           # i: 0.01
+           # d: 10.0
+        front_left_steering_joint:
+            p: 100.0
+           # i: 0.01
+           # d: 10.0
+        front_right_steering_joint:
+            p: 100.0
+           # i: 0.01
+           # d: 10.0

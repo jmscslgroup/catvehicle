@@ -673,10 +673,10 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
     <transmission name="tran1">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="back_right_wheel_joint">
-            <hardwareInterface>VelocityJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
         </joint>
         <actuator name="motor1">
-            <hardwareInterface>VelocityJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
     </transmission>
@@ -684,10 +684,10 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
     <transmission name="tran2">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="back_left_wheel_joint">
-            <hardwareInterface>VelocityJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
         </joint>
         <actuator name="motor2">
-            <hardwareInterface>VelocityJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
     </transmission>
@@ -695,11 +695,11 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
     <transmission name="rack_and_pinion_left">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="front_left_steering_joint">
-            <hardwareInterface>PositionJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         
         <actuator name="eps_left">
-            <hardwareInterface>PositionJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
     </transmission>
@@ -707,11 +707,11 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
     <transmission name="rack_and_pinion_right">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="front_right_steering_joint">
-            <hardwareInterface>PositionJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         
         <actuator name="eps_right">
-            <hardwareInterface>PositionJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
     </transmission>
