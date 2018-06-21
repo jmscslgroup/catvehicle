@@ -8,7 +8,7 @@ Changelog for package catvehicle
 * Added an m function convert a bagfile to a mat file.
 * Added a simulink block for ramp generation with ros parameters, useful for system identification
 * Removed depracted functions in gazebo cpp plugins while migrating from ROS Indigo to ROS Kinetic
-* Added tf nodes for publish tf frames for humancars.
+* Added tf nodes for publishing tf frames for humancars.
 * Contributors: Rahul Kumar Bhadani
 
 2.1.0 (2018-06-10)
