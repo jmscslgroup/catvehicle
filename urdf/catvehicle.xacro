@@ -535,7 +535,8 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0"/>
                 <geometry>
-                    <box size="${front_laser_size} ${front_laser_size} ${front_laser_size}"/>
+                    <mesh filename="package://catvehicle/meshes/SickLMS.dae"/>
+                    <!--box size="${front_laser_size} ${front_laser_size} ${front_laser_size}"/-->
                 </geometry>
             </visual>
             
