@@ -3,6 +3,7 @@
 <!--
 
 Author: Jonathan Sprinkle, Sam Taylor, Alex Warren, Rahul Bhadani
+Hannah Grace Mason, Joe Macinnes, Landon Chase Bentley
 Copyright (c) 2013-2018 Arizona Board of Regents
 All rights reserved.
 
@@ -38,11 +39,13 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
  
     <xacro:arg name="camera_left" default="true"/>
     <xacro:arg name="camera_right" default="true"/>
+    <xacro:arg name="triclops" default="true"/>
     <xacro:arg name="velodyne_points" default="true"/>
 
     <xacro:property name="velodyne_points" value="$(arg velodyne_points)"/>
     <xacro:property name="camera_right" value="$(arg camera_right)"/>
     <xacro:property name="camera_left" value="$(arg camera_left)"/>
+    <xacro:property name="triclops" value="$(arg triclops)"/>
     <xacro:property name="camera_box" value="0.1"/>
     <xacro:property name="sensor_box" value="0.25"/>
 
@@ -159,6 +162,9 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
     </xacro:if>
     <xacro:if value="${camera_left}">
         <xacro:include filename="$(find catvehicle)/urdf/catvehicle_left_camera.gazebo"/>
+    </xacro:if>
+    <xacro:if value="${triclops}">
+        <xacro:include filename="$(find catvehicle)/urdf/catvehicle_triclops.gazebo"/>
     </xacro:if>
 
 
@@ -597,6 +603,36 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
           <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry>
           <box size="${camera_box} ${camera_box} ${camera_box}"/>
+              </geometry>
+        </visual>
+
+        <inertial>
+          <mass value="1e-5" />
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+        </inertial>
+    </link>
+
+    <!-- TRICLOPS -->
+    <joint name="triclops" type="fixed">
+    <origin xyz="${sensor_box + camera_box/2} 0 ${0.725 + camera_box/2 + 1.25}" rpy="0 0 0"/>
+        <axis xyz="0 0 1"/>
+        <parent link="base_link"/>
+        <child link="triclops_link"/>
+    </joint>
+
+    <link name="triclops_link">
+        <collision>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry>
+           <box size="${camera_box/2} ${3*camera_box} ${camera_box/2}"/>
+          </geometry>
+        </collision>
+
+        <visual>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry>
+          <box size="${camera_box/2} ${3*camera_box} ${camera_box/2}"/>
               </geometry>
         </visual>
 
