@@ -51,7 +51,7 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
 
     <xacro:property name="PI" value="3.1415926835897931"/>
     <xacro:property name="base_height" value="1.0639"/>
-    <xacro:property name="base_mass" value="3755"/>
+    <xacro:property name="base_mass" value="1703.239"/>
     
     <!--Car's height is the height of bouding box of the 3D 
     mesh given by meshlab -->
@@ -77,12 +77,12 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
     
     <!-- Inertial tensor of car body has been taken from meshlab after
     analyzing the 3D structure of car body -->
-    <xacro:property name="base_mass_ixx" value="765.435882177108"/>
-    <xacro:property name="base_mass_ixy" value="-25.3344227009752"/>
-    <xacro:property name="base_mass_ixz" value="40.8010975986767"/>
-    <xacro:property name="base_mass_iyy" value="5136.99278956204"/>
-    <xacro:property name="base_mass_iyz" value="8.77030504927479"/>
-    <xacro:property name="base_mass_izz" value="5576.41387835126"/>
+    <xacro:property name="base_mass_ixx" value="347.195805"/>
+    <xacro:property name="base_mass_ixy" value="-11.4914985"/>
+    <xacro:property name="base_mass_ixz" value="18.5070628"/>
+    <xacro:property name="base_mass_iyy" value="2330.10026"/>
+    <xacro:property name="base_mass_iyz" value="3.97814264"/>
+    <xacro:property name="base_mass_izz" value="2529.41827"/>
     
     <xacro:property name="tyre_x" value="1.05"/>
     <xacro:property name="tyre_front_x" value="1.55"/>
