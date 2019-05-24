@@ -38,7 +38,7 @@ class joy2cmdvel:
         rospy.init_node('joy2cmdvel', anonymous=True)
 
         self.ns = rospy.get_param("~namespace","catvehicle")
-        self.velmax = rospy.get_param("~velmax",3)
+        self.velmax = rospy.get_param("~velmax",2)
 
         rospy.loginfo(rospy.get_caller_id() + " startup in namespace {0} with max velocity {1}".format(self.ns,self.velmax))
 
@@ -52,7 +52,7 @@ class joy2cmdvel:
     def callback(self,data):
 #        rospy.loginfo(rospy.get_caller_id() + " heard linear=%lf, angular=%lf", data.axes[3], data.axes[0])
         self.x = data.axes[3]*self.velmax
-        self.z = data.axes[0]
+        self.z = -1.0*data.axes[0]*0.05
 
     def publish(self):
         msgTwist = Twist()
