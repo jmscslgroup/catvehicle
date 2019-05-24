@@ -35,7 +35,7 @@ roslaunch catvehicle catvehicle_empty.launch
 How to execute this file?
 ========================
 
-roslaunch catvehicle catvehicle_spawn_nocmd.launch robot1:=acar_sim X:=0 Y:=0 Z:=0 roll:=0 pitch:=0 yaw:=0
+roslaunch catvehicle catvehicle_spawn_nocmd.launch robot:=acar_sim X:=0 Y:=0 Z:=0 roll:=0 pitch:=0 yaw:=0
 
 -->
 
@@ -43,7 +43,7 @@ roslaunch catvehicle catvehicle_spawn_nocmd.launch robot1:=acar_sim X:=0 Y:=0 Z:
 
     <!-- JMS trying to set statistics param -->
     <param name="enable_statistics" value="true" />
-    <arg name="robot1" default="catvehicle"/>
+    <arg name="robot" default="catvehicle"/>
     <arg name="X" default="0"/>
     <arg name="Y" default="0"/>
     <arg name="Z" default="0"/>
@@ -51,10 +51,10 @@ roslaunch catvehicle catvehicle_spawn_nocmd.launch robot1:=acar_sim X:=0 Y:=0 Z:
     <arg name="pitch" default="0"/>
     <arg name="yaw" default="0"/>
 
-    <group ns="$(arg robot1)">
-        <param name="robot_description" command="$(find xacro)/xacro.py '$(find catvehicle)/urdf/catvehicle.xacro' roboname:='$(arg robot1)'" />
+    <group ns="$(arg robot)">
+        <param name="robot_description" command="$(find xacro)/xacro.py '$(find catvehicle)/urdf/catvehicle.xacro' roboname:='$(arg robot)'" />
         <include file="$(find catvehicle)/launch/catvehicle.launch">
-            <arg name="robot_name" value="$(arg robot1)"/>
+            <arg name="robot_name" value="$(arg robot)"/>
             <arg name="init_pose" value="-x $(arg X) -y $(arg Y) -z $(arg Z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
             <arg name="config_file" value="catvehicle_control.yaml"/>
         </include>

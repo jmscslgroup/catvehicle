@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <!--
 
 Author: Rahul Kumar Bhadani
@@ -40,7 +42,7 @@ roslaunch azcar_sim humancar_spwan_nocmd.launch robot1:=azcar_sim X:=0 Y:=0 Z:=0
 roslaunch azcar_sim humancar_spwan_nocmd.launch robot1:=follower_sim X:=10 Y:=0 Z:=0 roll:=0 pitch:=0 yaw:=0
 
 How to execute this file?
-roslaunch azcar_sim stepvel.launch leader_robot:=car1
+roslaunch azcar_sim stepvel.launch robot:=car1
 
 
 -->
@@ -49,40 +51,38 @@ roslaunch azcar_sim stepvel.launch leader_robot:=car1
 <launch>
 
  <param name="enable_statistics" value="true" />
-      <arg name="leader_robot" default="catvehicle"/>
+      <arg name="robot" default="catvehicle"/>
       <arg name="vel" default="2.0"/> <!-- 35.5 m/s is upper limit in the velocity-->
       <arg name="strAng" default="0"/>
 
-<group ns="$(arg leader_robot)">
+<group ns="$(arg robot)">
     <param name="constVel" value="$(arg vel)"/>
     <param name="strAngle" value="$(arg strAng)"/>
-    <node pkg="stepvel" type="stepvel_node" name="stepvel_$(arg leader_robot)" output="screen" required="true">
-        <remap from="cmd_vel" to="cmd_vel"/>
-    </node>
+    <node pkg="stepvel" type="stepvel_node" name="stepvel_$(arg robot)" output="screen" required="true"/>
 
 <!--
 <node name="recorder" pkg="rosbag" type="record" output="screen" args=" -o stepvel_ -a" />
 
-    <node pkg="hoffmansubsystem" type="hoffmansubsystem_node" name="hoffmansubsystem_node_$(arg leader_robot)" output="screen" required="true">
+    <node pkg="hoffmansubsystem" type="hoffmansubsystem_node" name="hoffmansubsystem_node_$(arg robot)" output="screen" required="true">
     </node>
 -->
-<!--node pkg="sin_str0_leadervel_exp4_steer" type="sin_str0_leadervel_exp4_steer_node" name="sin_str0_leadervel_exp4_steer_$(arg leader_robot)" output="screen" required="true"-->
-<!--node pkg="azcar_sim" type="leadercmd" name="leadercmd_$(arg leader_robot)" output="screen" required="true"-->
+<!--node pkg="sin_str0_leadervel_exp4_steer" type="sin_str0_leadervel_exp4_steer_node" name="sin_str0_leadervel_exp4_steer_$(arg robot)" output="screen" required="true"-->
+<!--node pkg="azcar_sim" type="leadercmd" name="leadercmd_$(arg robot)" output="screen" required="true"-->
 <!--
-<node pkg="hoffmannfollower" type="hoffmannfollower_node" name="hoffmanfollower_$(arg leader_robot)" output="screen" required="true">
-            <remap from="/azcar_sim/vel" to="/$(arg leader_robot)/vel"/>
-            <remap from="/azcar_sim/steering" to="/$(arg leader_robot)/steering"/>
-            <remap from="/azcar_sim/cmd_vel" to="/$(arg leader_robot)/cmd_vel"/>
-            <remap from="/azcar_sim/cmd_vel_safe" to="/$(arg leader_robot)/cmd_vel_safe"/>
-            <remap from="/azcar_sim/odom" to="/$(arg leader_robot)/odom"/>
-            <remap from="/azcar_sim/waypoint" to="/$(arg leader_robot)/waypoint"/>
+<node pkg="hoffmannfollower" type="hoffmannfollower_node" name="hoffmanfollower_$(arg robot)" output="screen" required="true">
+            <remap from="/azcar_sim/vel" to="/$(arg robot)/vel"/>
+            <remap from="/azcar_sim/steering" to="/$(arg robot)/steering"/>
+            <remap from="/azcar_sim/cmd_vel" to="/$(arg robot)/cmd_vel"/>
+            <remap from="/azcar_sim/cmd_vel_safe" to="/$(arg robot)/cmd_vel_safe"/>
+            <remap from="/azcar_sim/odom" to="/$(arg robot)/odom"/>
+            <remap from="/azcar_sim/waypoint" to="/$(arg robot)/waypoint"/>
 </node>
 -->
 <!--
 <node pkg="azcar_sim" type="joy2cmdvel.py" name="joy2cmdvel" output="screen"
             required="true">
-                <param name="namespace" value="/$(arg leader_robot)"/>
-                    <remap from="/azcar_sim/cmd_vel" to="/$(arg leader_robot)/cmd_vel" />
+                <param name="namespace" value="/$(arg robot)"/>
+                    <remap from="/azcar_sim/cmd_vel" to="/$(arg robot)/cmd_vel" />
                     </node>
 
 -->

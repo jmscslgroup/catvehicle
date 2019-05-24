@@ -1,3 +1,5 @@
+<?xml version="1.0" ?>
+
 <!--
 
 Author: Jonathan Sprinkle
@@ -94,12 +96,7 @@ output="screen" ns="/$(arg robot_name)" args="joint1_velocity_controller joint2_
 </node>
 
 <!-- Let's be safe with obstacles by stopping when we get too close--> 
-<node name="obstacleStopper$(arg robot_name)" pkg="obstaclestopper" type="obstaclestopper_node" output="screen">
-    <remap from="/catvehicle/cmd_vel" to="/$(arg robot_name)/cmd_vel" />
-    <remap from="/catvehicle/vel" to="/$(arg robot_name)/vel" />
-    <remap from="/catvehicle/distanceEstimator/dist" to="/$(arg robot_name)/distanceEstimatorSteeringBased/dist" />
-    <remap from="/catvehicle/cmd_vel_safe" to="/$(arg robot_name)/cmd_vel_safe" />
-</node>
+<node name="obstacleStopper$(arg robot_name)" pkg="obstaclestopper" type="obstaclestopper_node" output="screen"/>
 
 <!-- publish the path information of this vehicle -->
 <node name="odom2path$(arg robot_name)" pkg="catvehicle" type="odom2path.py" respawn="true" output="screen" args="-n /$(arg robot_name)">
