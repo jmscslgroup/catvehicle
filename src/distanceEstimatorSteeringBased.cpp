@@ -8,7 +8,7 @@
 // TODO: enable distance range we care about
 
 #include "ros/ros.h"
-#include "std_msgs/Float32.h"
+#include "std_msgs/Float64.h"
 #include "sensor_msgs/LaserScan.h"
 #include "geometry_msgs/Wrench.h"
 
@@ -19,24 +19,24 @@
 //#define DEBUG
 
 // this global var holds the distance
-std_msgs::Float32 angle;
-std_msgs::Float32 dist;
-std_msgs::Float32 Xdist;
-std_msgs::Float32 Ydist;
-std_msgs::Float32 dist_1;
-std_msgs::Float32 vel;
-std_msgs::Float32 vel_1;
+std_msgs::Float64 angle;
+std_msgs::Float64 dist;
+std_msgs::Float64 Xdist;
+std_msgs::Float64 Ydist;
+std_msgs::Float64 dist_1;
+std_msgs::Float64 vel;
+std_msgs::Float64 vel_1;
 
 // memory for bad data
-std_msgs::Float32 vel_lastGood;
-std_msgs::Float32 dist_lastGood;
+std_msgs::Float64 vel_lastGood;
+std_msgs::Float64 dist_lastGood;
 float weightedVel;
 
-std_msgs::Float32 accel;
+std_msgs::Float64 accel;
 ros::Time lastUpdate, currentUpdateTime;
 
-std::vector<std_msgs::Float32> distVector;
-std::vector<std_msgs::Float32> velVector;
+std::vector<std_msgs::Float64> distVector;
+std::vector<std_msgs::Float64> velVector;
 std::vector<double> timeVector;
 
 ros::Duration deltaT;
@@ -308,12 +308,12 @@ int main( int argc, char **argv )
 
 
     // TODO: make this not just a float value
-    ros::Publisher dist_pub = n.advertise<std_msgs::Float32>(dist_topic, 1);
-    ros::Publisher Xdist_pub = n.advertise<std_msgs::Float32>(Xdist_topic, 1);
-    ros::Publisher Ydist_pub = n.advertise<std_msgs::Float32>(Ydist_topic, 1);
-    ros::Publisher angle_pub = n.advertise<std_msgs::Float32>(angle_topic, 1);
-  //  ros::Publisher vel_pub = n.advertise<std_msgs::Float32>(vel_topic, 1);
-    //  	ros::Publisher accel_pub = n.advertise<std_msgs::Float32>("/azcar_sim/accel", 100);
+    ros::Publisher dist_pub = n.advertise<std_msgs::Float64>(dist_topic, 1);
+    ros::Publisher Xdist_pub = n.advertise<std_msgs::Float64>(Xdist_topic, 1);
+    ros::Publisher Ydist_pub = n.advertise<std_msgs::Float64>(Ydist_topic, 1);
+    ros::Publisher angle_pub = n.advertise<std_msgs::Float64>(angle_topic, 1);
+  //  ros::Publisher vel_pub = n.advertise<std_msgs::Float64>(vel_topic, 1);
+    //  	ros::Publisher accel_pub = n.advertise<std_msgs::Float64>("/azcar_sim/accel", 100);
 
     // we also want to subscribe to the signaller
     ros::Subscriber sub = n.subscribe(scan_topic, 1, &scanCallback);
