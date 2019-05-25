@@ -71,7 +71,7 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
     bounding box height -->
     <xacro:property name="front_bumper_height" value="${car_height/2}"/>
     
-    <!--This is the wheel base, i.e distance between right and left front wheels-->
+    <!--This is the car tread, i.e distance between right and left front wheels-->
     <xacro:property name="car_width" value="1.290"/>
     <xacro:property name="car_width_offset" value="0.05"/>
     

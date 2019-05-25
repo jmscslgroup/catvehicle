@@ -63,7 +63,7 @@ class cmdvel2gazebo:
 
         # car Tread
         # this value is from the simulator
-        self.T=1.301
+        self.T=1.29
 
         # how many seconds delay for the dead man's switch
         # TODO: set timeout from launch file or rosparam
@@ -84,8 +84,8 @@ class cmdvel2gazebo:
 
 
     def callback(self,data):
-        # 2.8101 is the gain factor in order to account for mechanical reduction of the tyres
-        self.x = 2.8101*data.linear.x
+        # 2.6101 is the gain factor in order to account for mechanical reduction of the tyres
+        self.x = 2.6101*data.linear.x
         # constrain the ideal steering angle such that the ackermann steering is maxed out
         self.z = max(-self.maxsteer,min(self.maxsteer,data.angular.z))
         self.lastMsg = rospy.Time.now()
