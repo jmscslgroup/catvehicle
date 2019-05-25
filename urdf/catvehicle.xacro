@@ -94,7 +94,7 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
     <xacro:property name="tyre_length" value="0.2336291492"/>
 
     <xacro:property name="tyre_radius" value="0.3671951254"/>
-    <xacro:property name="tyre_mass" value="100"/>
+    <xacro:property name="tyre_mass" value="20"/>
   
     <!--xacro:property name="tyre_mass_ixx" value="2.53174430759784"/>
     <xacro:property name="tyre_mass_iyy" value="1.43724304615612"/>
@@ -117,7 +117,7 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
     <xacro:property name="tyre_height" value="-0.696"/>
     
     <xacro:property name="str_mass" value="50.00"/>
-    <xacro:property name="str_length" value="0.01"/>
+    <xacro:property name="str_length" value="0.05"/>
     <xacro:property name="str_radius" value="0.1"/>
     <xacro:property name="front_right_offset" value="0.05"/>
     <xacro:property name="str_mass_ixx" value="${((1/2)*str_mass*str_radius*str_radius)}"/>
@@ -331,7 +331,7 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
     <joint name="front_right_steering_joint" type="revolute">
         <parent link="base_link"/>
         <child link="front_right_steering_link"/>
-        <origin xyz="${tyre_front_x} ${-car_width/2 - str_length/2 + front_right_offset} ${tyre_r}" rpy="0 0 0"/>
+        <origin xyz="${tyre_front_x} ${-car_width/2 - 2*str_length} ${tyre_r}" rpy="0 0 0"/>
         <axis xyz="0 0 1"/>
         <limit effort="10000" lower="${-str_angle}" upper="${str_angle}" velocity="1000"/>
     </joint>
@@ -365,7 +365,7 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
     <joint name="front_right_wheel_joint" type="continuous">
         <parent link="front_right_steering_link"/>
         <child link="front_right_wheel_link"/>
-        <origin xyz="0 ${-str_length/2 - tyre_length/2} 0" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
         <dynamics damping="0.01"/>
         <limit effort="10000" velocity="1000"/>
@@ -427,7 +427,7 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
     <joint name="front_left_steering_joint" type="revolute">
         <parent link="base_link"/>
         <child link="front_left_steering_link"/>
-        <origin xyz="${tyre_front_x} ${car_width/2 + str_length/2} ${tyre_r}" rpy="0 0 0"/>
+        <origin xyz="${tyre_front_x} ${car_width/2 + 2*str_length} ${tyre_r}" rpy="0 0 0"/>
         <axis xyz="0 0 1"/>
         <limit effort="10000" lower="${-str_angle}" upper="${str_angle}" velocity="1000"/>
     </joint>
@@ -463,7 +463,7 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
     <joint name="front_left_wheel_joint" type="continuous">
           <parent link="front_left_steering_link"/>
           <child link="front_left_wheel_link"/>
-          <origin xyz="0 ${0.005 + tyre_length/2} 0" rpy="0 0 0"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
           <axis xyz="0 1 0"/>
           <dynamics damping="0.01"/>
           <limit effort="10000" velocity="1000" />
