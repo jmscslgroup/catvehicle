@@ -2,7 +2,7 @@
 
 <!--
 
-Author: Jonathan Sprinkle
+Author: Jonathan Sprinkle, Rahul Bhadani
 Copyright (c) 2015-2016 Arizona Board of Regents
 All rights reserved.
 
@@ -28,9 +28,6 @@ Summary:
 =======
 This launch file loads the worlds and models for the catvehicle
 
-How to execute it:
-=================
-roslaunch catvehicle catvehicle_empty.launch
 
 -->
 

@@ -1,7 +1,7 @@
 <!--
 
-Author: Jonathan Sprinkle, Sam Taylor, Alex Warren
-Copyright (c) 2015 Arizona Board of Regents
+Author: Jonathan Sprinkle, Sam Taylor, Alex Warren, Rahul Bhadani
+Copyright (c) 2015-2020 Arizona Board of Regents
 All rights reserved.
 
 Permission is hereby granted, without written agreement and without 
@@ -35,7 +35,7 @@ roslaunch catvehicle catvehicle_empty.launch
 How to execute this file?
 ========================
 
-roslaunch catvehicle catvehicle_spawn_nocmd.launch robot:=acar_sim X:=0 Y:=0 Z:=0 roll:=0 pitch:=0 yaw:=0
+roslaunch catvehicle catvehicle_spawn.launch robot:=acar_sim X:=0 Y:=0 Z:=0 roll:=0 pitch:=0 yaw:=0
 
 -->
 
