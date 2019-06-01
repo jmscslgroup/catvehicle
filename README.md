@@ -63,7 +63,7 @@ catkin_make
 Follow the tutorials on the CAT Vehicle Testbed group on the [CPS Virtual Organization](https://cps-vo.org/group/CATVehicleTestbed) to see how to use the testbed.
 
 # Issues
-If you run into a problem, please feel free to post to [issues] (https://github.com/jmscslgroup/catvehicle/issues). If the issue is urgent, please email to  [catvehicle@list.arizona.edu](catvehicle@list.arizona.edu).
+If you run into a problem, please feel free to post to [issues](https://github.com/jmscslgroup/catvehicle/issues). If the issue is urgent, please email to  [catvehicle@list.arizona.edu](catvehicle@list.arizona.edu).
 
 # Acknowledgements
 ## License
