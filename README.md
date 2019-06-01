@@ -44,7 +44,7 @@ year={2018}
 
 # How to use it
 
-# Installing ROS
+## Installing ROS
 * Follow the steps mentioned in the [ROS wiki page](http://wiki.ros.org/melodic/Installation/Ubuntu%C2%A0) on how to install ROS Melodic. 
 * In addition to that we are required to install some additional ros packages
 ```shell
@@ -75,7 +75,10 @@ git clone https://github.com/jmscslgroup/sicktoolbox_wrapper
 git clone https://
 catkin_make
 ```
-
+## Sourcing workspace to the environment path
+```bash
+echo "source ~/catvehicle_ws/devel/setup.bash" >> ~/.bashrc
+```
 
 # Simple tutorial and examples
 Follow the tutorials on the CAT Vehicle Testbed group on the [CPS Virtual Organization](https://cps-vo.org/group/CATVehicleTestbed) to see how to use the testbed.
