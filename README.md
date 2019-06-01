@@ -47,17 +47,23 @@ cd ..
 catkin_make
 ```
 
-At this point, you can extract this package and other dependent package into your src directory
-```
+At this point, you can extract this release package from [catvehicle-3.0.1](https://github.com/jmscslgroup/catvehicle/releases/download/3.0.1/catvehicle-3.0.1.tar.xz) and other dependent package into your src directory
+```shell
 cd catvehicle_ws/src
-tar xzf catvehicle-x.y.z.tgz
+mkdir catvehicle
+tar -xJf catvehicle-x.y.z.tar.xz -C catvehicle
 cd ..
+git clone https://github.com/jmscslgroup/obstaclestopper
+git clone https://
 catkin_make
 ```
 
 
 # Simple tutorial and examples
 Follow the tutorials on the CAT Vehicle Testbed group on the [CPS Virtual Organization](https://cps-vo.org/group/CATVehicleTestbed) to see how to use the testbed.
+
+# Issues
+If you run into a problem, please feel free to post to [](). If the issue is urgent, please email to  [catvehicle@list.arizona.edu](catvehicle@list.arizona.edu).
 
 # Acknowledgements
 ## License
@@ -84,7 +90,7 @@ TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 
 ## Authors and contributors
 * Jonathan Sprinkle (sprinkjm@email.arizona.edu)
-* Rahul Bhadani (rahulkumarbhadani@email.arizona.edu)
+* Rahul Bhadani (rahulbhadani@email.arizona.edu)
 * Sam Taylor
 * Kennon McKeever (kennondmckeever@email.arizona.edu)
 * Alex Warren
