@@ -5,27 +5,40 @@ The CAT Vehicle is a ROS based simulator to facilitate the development of autono
 * ROS
 * obstaclestopper
 
-# Citation
-If you find this work useful please give credits to the authors by citing:
-```
-Rahul Bhadani, Jonathan Sprinkle, Matthew Bunting. "The CAT Vehicle Testbed: A Simulator with Hardware in the Loop for Autonomous Vehicle Applications". Proceedings 2nd International Workshop on Safe Control of Autonomous Vehicles (SCAV 2018), Porto, Portugal, 10th April 2018, Electronic Proceedings in Theoretical Computer Science 269, pp. 32–47. Download:  http://dx.doi.org/10.4204/EPTCS.269.4.
+# Citing this work
+If you find this work useful please give credits to the authors and developers by citing:
+```json
+Rahul Bhadani, Jonathan Sprinkle, Matthew Bunting. "The CAT Vehicle Testbed: 
+A Simulator with Hardware in the Loop for Autonomous Vehicle Applications". 
+Proceedings 2nd International Workshop on Safe Control of Autonomous Vehicles (SCAV 2018),
+Porto, Portugal, 10th April 2018, Electronic Proceedings in Theoretical Computer Science 269,
+pp. 32–47.  Download:  http://dx.doi.org/10.4204/EPTCS.269.4.
 ```
 
 bibtex:
 ```
 @article{bhadani2018cat,
-  title={The CAT Vehicle Testbed: A Simulator with Hardware in the Loop for Autonomous Vehicle Applications},
-    author={Bhadani, Rahul Kumar and Sprinkle, Jonathan and Bunting, Matthew},
-      journal={Proceedings 2nd International Workshop on Safe Control of Autonomous Vehicles (SCAV 2018), Porto, Portugal, 10th April 2018, Electronic Proceedings in Theoretical Computer Science 269, pp. 32–47},
-        year={2018}
+  title={{The CAT Vehicle Testbed: A Simulator with Hardware 
+  in the Loop for Autonomous Vehicle Applications}},
+  author={Bhadani, Rahul and Sprinkle, Jonathan and Bunting, Matthew},
+  journal={{Proceedings of 2nd International Workshop on Safe Control of Autonomous Vehicles
+  (SCAV 2018), Porto, Portugal, 10th April 2018, Electronic Proceedings
+  in Theoretical Computer Science 269, pp. 32–47}},
+year={2018}
 }
 ```
 
+# What's new
+* Released for Ubuntu 18.04 LTS, ROS Melodic and Gazebo 9.0
+* Support for front camera
+* More stable vehicle dynamics
+* Bug fixes and improvements
 
+# How to use it
 
-# catkin workspace and build
+## Creating catkin workspace
 In order to use the catvehicle ROS package, you should work within a catkin workspace. If you do not already have one:
-```
+```shell
 cd ~
 mkdir -p catvehicle_ws/src
 cd catvehicle_ws/src
@@ -34,7 +47,7 @@ cd ..
 catkin_make
 ```
 
-At this point, you can extract this package into your src directory
+At this point, you can extract this package and other dependent package into your src directory
 ```
 cd catvehicle_ws/src
 tar xzf catvehicle-x.y.z.tgz
@@ -42,12 +55,13 @@ cd ..
 catkin_make
 ```
 
+
 # Simple tutorial and examples
-Follow the tutorials on the CAT Vehicle Testbed group on the CPS Virtual Organization to see how to use the testbed.
+Follow the tutorials on the CAT Vehicle Testbed group on the [CPS Virtual Organization](https://cps-vo.org/group/CATVehicleTestbed) to see how to use the testbed.
 
 # Acknowledgements
 ## License
-Copyright (c) 2013-2018 Arizona Board of Regents
+Copyright (c) 2013-2020 Arizona Board of Regents; The University of Arizona
 All rights reserved
 
 Permission is hereby granted, without written agreement and without 
@@ -80,5 +94,5 @@ TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 * Sean Whitsitt
 
 ## Support
-This work was supported by the National Science Foundation and AFOSR under awards 1521617, 1446435, 1262960 and 1253334. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+This work was supported by the National Science Foundation and AFOSR under awards 1659428, 1521617, 1446435, 1262960 and 1253334. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
 
