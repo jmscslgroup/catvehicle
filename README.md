@@ -8,6 +8,11 @@ The CAT Vehicle is a ROS based simulator to facilitate the development of autono
 * [sicktoolbox](https://github.com/jmscslgroup/sicktoolbox)
 * [sicktoolbox_wrapper](https://github.com/jmscslgroup/sicktoolbox_wrapper)
 
+# System Requirements
+* Ubuntu 18.04 LTS (We cannot guarantee if it works on any other version of Ubuntu)
+* RAM: 4GB required, > 8GB recommended.
+
+
 # Citing this work
 If you find this work useful please give credits to the authors and developers by citing:
 ```json
@@ -39,6 +44,13 @@ year={2018}
 
 # How to use it
 
+# Installing ROS
+* Follow the steps mentioned in the [ROS wiki page](http://wiki.ros.org/melodic/Installation/Ubuntu%C2%A0) on how to install ROS Melodic. 
+* In addition to that we are required to install some additional ros packages
+```shell
+sudo apt-get install ros-melodic-velodyne
+```
+
 ## Creating catkin workspace
 In order to use the catvehicle ROS package, you should work within a catkin workspace. If you do not already have one:
 ```shell
@@ -69,7 +81,7 @@ catkin_make
 Follow the tutorials on the CAT Vehicle Testbed group on the [CPS Virtual Organization](https://cps-vo.org/group/CATVehicleTestbed) to see how to use the testbed.
 
 # Issues
-If you run into a problem, please feel free to post to [issues](https://github.com/jmscslgroup/catvehicle/issues). If the issue is urgent, please email to  [catvehicle@list.arizona.edu](catvehicle@list.arizona.edu).
+If you run into a problem, please feel free to post to [issues](https://github.com/jmscslgroup/catvehicle/issues). If the issue is urgent, please email to catvehicle@list.arizona.edu.
 
 # Acknowledgements
 ## License
