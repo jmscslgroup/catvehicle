@@ -3,7 +3,8 @@ The CAT Vehicle is a ROS based simulator to facilitate the development of autono
 
 # Dependencies
 * ROS
-* obstaclestopper
+* [obstaclestopper](https://github.com/jmscslgroup/obstaclestopper)
+* [control_toolbox](https://github.com/jmscslgroup/control_toolbox)
 
 # Citing this work
 If you find this work useful please give credits to the authors and developers by citing:
@@ -54,6 +55,7 @@ mkdir catvehicle
 tar -xJf catvehicle-x.y.z.tar.xz -C catvehicle
 cd ..
 git clone https://github.com/jmscslgroup/obstaclestopper
+git clone https://github.com/jmscslgroup/control_toolbox
 git clone https://
 catkin_make
 ```
