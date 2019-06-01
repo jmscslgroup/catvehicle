@@ -1,5 +1,5 @@
-# About
-The catvehicle ROS package houses files that utilize the Gazebo simulator, and additional interfaces to the physical CAT Vehicle Testbed.
+# Cognitive and Autonomous Test Vehicle (CAT Vehicle) Testbed
+The CAT Vehicle is a ROS based simulator to facilitate the development of autonomous vehicle applications. This repository houses the files that utilize the Gazebo simulator, and additional interfaces to the physical CAT Vehicle Testbed available at the University of Arizona - Department of Electrical and Computer Engineering.
 
 # Dependencies
 * ROS
