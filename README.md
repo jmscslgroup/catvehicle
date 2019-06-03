@@ -72,7 +72,7 @@ git clone https://github.com/jmscslgroup/obstaclestopper
 git clone https://github.com/jmscslgroup/control_toolbox
 git clone https://github.com/jmscslgroup/sicktoolbox
 git clone https://github.com/jmscslgroup/sicktoolbox_wrapper
-git clone https://
+git clone https://github.com/jmscslgroup/stepvel
 catkin_make
 ```
 ## Sourcing workspace to the environment path
