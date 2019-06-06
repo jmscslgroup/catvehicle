@@ -72,6 +72,7 @@ git clone https://github.com/jmscslgroup/control_toolbox
 git clone https://github.com/jmscslgroup/sicktoolbox
 git clone https://github.com/jmscslgroup/sicktoolbox_wrapper
 git clone https://github.com/jmscslgroup/stepvel
+git clone https://github.com/jmscslgroup/cmdvel2gazebo
 catkin_make
 ```
 ## Sourcing workspace to the environment path
