@@ -66,7 +66,8 @@ At this point, you can extract this release package from [catvehicle-3.0.1](http
 ```shell
 cd ~/catvehicle_ws/src
 mkdir catvehicle
-tar -xJf catvehicle-x.y.z.tar.xz -C catvehicle
+wget https://github.com/jmscslgroup/catvehicle/releases/download/3.0.1/catvehicle-3.0.1.tar.xz
+tar -xJf catvehicle-3.0.1.tar.xz -C catvehicle
 git clone https://github.com/jmscslgroup/obstaclestopper
 git clone https://github.com/jmscslgroup/control_toolbox
 git clone https://github.com/jmscslgroup/sicktoolbox
