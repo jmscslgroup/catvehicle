@@ -7,6 +7,8 @@ The CAT Vehicle is a ROS based simulator to facilitate the development of autono
 * [control_toolbox](https://github.com/jmscslgroup/control_toolbox)
 * [sicktoolbox](https://github.com/jmscslgroup/sicktoolbox)
 * [sicktoolbox_wrapper](https://github.com/jmscslgroup/sicktoolbox_wrapper)
+* [stepvel](https://github.com/jmscslgroup/stepvel)
+* [cmdvel2gazebo](https://github.com/jmscslgroup/cmdvel2gazebo)
 
 # System Requirements
 * Ubuntu 18.04 LTS (We cannot guarantee if it works on any other version of Ubuntu)
@@ -68,6 +70,10 @@ cd ~/catvehicle_ws/src
 mkdir catvehicle
 wget https://github.com/jmscslgroup/catvehicle/releases/download/3.0.1/catvehicle-3.0.1.tar.xz
 tar -xJf catvehicle-3.0.1.tar.xz -C catvehicle
+```
+Alternatively, you can clone this GitHub repo itself to get latest package, however, it might be unstable.
+
+```shell
 git clone https://github.com/jmscslgroup/obstaclestopper
 git clone https://github.com/jmscslgroup/control_toolbox
 git clone https://github.com/jmscslgroup/sicktoolbox
