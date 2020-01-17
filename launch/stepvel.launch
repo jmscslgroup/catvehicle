@@ -53,7 +53,7 @@ roslaunch azcar_sim stepvel.launch robot:=car1
  <param name="enable_statistics" value="true" />
       <arg name="robot" default="catvehicle"/>
       <arg name="vel" default="2.0"/> <!-- 35.5 m/s is upper limit in the velocity-->
-      <arg name="strAng" default="0"/>
+      <arg name="strAng" default="0.0"/>
 
 <group ns="$(arg robot)">
     <param name="constVel" value="$(arg vel)"/>
