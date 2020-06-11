@@ -73,13 +73,7 @@ catkin_make
 At this point, you can extract this release package from [catvehicle-3.0.1](https://github.com/jmscslgroup/catvehicle/releases/download/3.0.1/catvehicle-3.0.1.tar.xz) and other dependent package into your src directory
 ```shell
 cd ~/catvehicle_ws/src
-mkdir catvehicle
-wget https://github.com/jmscslgroup/catvehicle/releases/download/3.0.1/catvehicle-3.0.1.tar.xz
-tar -xJf catvehicle-3.0.1.tar.xz -C catvehicle
-```
-Alternatively, you can clone this GitHub repo itself to get latest package, however, it might be unstable.
-
-```shell
+git clone https://github.com/jmscslgroup/catvehicle
 git clone https://github.com/jmscslgroup/obstaclestopper
 git clone https://github.com/jmscslgroup/control_toolbox
 git clone https://github.com/jmscslgroup/sicktoolbox
