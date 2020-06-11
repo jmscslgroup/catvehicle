@@ -10,7 +10,6 @@ Panels:
         - /Path1
         - /PointCloud1
         - /LaserScan1
-        - /Image1
       Splitter Ratio: 0.522352933883667
     Tree Height: 827
   - Class: rviz/Selection
@@ -79,11 +78,6 @@ Visualization Manager:
           Show Trail: false
           Value: true
         camera_left_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        camera_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -220,30 +214,6 @@ Visualization Manager:
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
-    - Class: rviz/Image
-      Enabled: true
-      Image Topic: /catvehicle/camera_right/image_raw_right
-      Max Value: 1
-      Median window: 5
-      Min Value: 0
-      Name: Image
-      Normalize Range: true
-      Queue Size: 2
-      Transport Hint: raw
-      Unreliable: false
-      Value: true
-    - Class: rviz/Image
-      Enabled: true
-      Image Topic: /catvehicle/camera_left/image_raw_left
-      Max Value: 1
-      Median window: 5
-      Min Value: 0
-      Name: Image
-      Normalize Range: true
-      Queue Size: 2
-      Transport Hint: raw
-      Unreliable: false
       Value: true
   Enabled: true
   Global Options:

@@ -41,8 +41,10 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
     <xacro:arg name="camera_right" default="true"/>
     <xacro:arg name="triclops" default="true"/>
     <xacro:arg name="velodyne_points" default="true"/>
+    <xacro:arg name="laser_points" default="true"/>
 
     <xacro:property name="velodyne_points" value="$(arg velodyne_points)"/>
+    <xacro:property name="laser_points" value="$(arg laser_points)"/>
     <xacro:property name="camera_right" value="$(arg camera_right)"/>
     <xacro:property name="camera_left" value="$(arg camera_left)"/>
     <xacro:property name="triclops" value="$(arg triclops)"/>
@@ -167,6 +169,9 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
         <xacro:include filename="$(find catvehicle)/urdf/catvehicle_triclops.gazebo"/>
     </xacro:if>
 
+    <xacro:if value="${laser_points}">
+        <xacro:include filename="$(find catvehicle)/urdf/catvehicle_laser_points.gazebo"/>
+    </xacro:if>
 
     <!--Car Body-->
 
@@ -613,9 +618,9 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
         </inertial>
     </link>
 
-    <!-- TRICLOPS -->
+
     <joint name="triclops" type="fixed">
-    <origin xyz="${sensor_box + camera_box/2} 0 ${0.725 + camera_box/2 + 1.25}" rpy="0 0 0"/>
+    <origin xyz="-0.25 0 ${0.725 + sensor_box/2 + 1.2}" rpy="0 0 0"/>
         <axis xyz="0 0 1"/>
         <parent link="base_link"/>
         <child link="triclops_link"/>
@@ -625,7 +630,7 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
         <collision>
           <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry>
-           <box size="${camera_box/2} ${3*camera_box} ${camera_box/2}"/>
+          <box size="${camera_box/2} ${3*camera_box} ${camera_box/2}"/>
           </geometry>
         </collision>
 
@@ -644,40 +649,10 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
     </link>
 
 
-    <joint name="camera_joint" type="fixed">
-    <origin xyz="0 0 ${0.725 + sensor_box/2 + 1.25}" rpy="0 0 0"/>
-        <axis xyz="0 0 1"/>
-        <parent link="base_link"/>
-        <child link="camera_link"/>
-    </joint>
-
-    <link name="camera_link">
-        <collision>
-          <origin xyz="0 0 0" rpy="0 0 0"/>
-          <geometry>
-           <box size="${sensor_box} ${sensor_box} ${sensor_box}"/>
-          </geometry>
-        </collision>
-
-        <visual>
-          <origin xyz="0 0 0" rpy="0 0 0"/>
-          <geometry>
-          <box size="${sensor_box} ${sensor_box} ${sensor_box}"/>
-              </geometry>
-        </visual>
-
-        <inertial>
-          <mass value="1e-5" />
-          <origin xyz="0 0 0" rpy="0 0 0"/>
-          <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-        </inertial>
-    </link>
-
-
         <joint name="velodyne_joint" type="fixed">
-            <origin xyz="0 0 ${sensor_box/2 + 0.01}" rpy="0 0 0"/>
+            <origin xyz="-0.5 0 ${sensor_box/2 + 0.01}" rpy="0 0 0"/>
             <axis xyz="0 0 1"/>
-            <parent link="camera_link"/>
+            <parent link="triclops_link"/>
             <child link="velodyne_link"/>
         </joint>
 

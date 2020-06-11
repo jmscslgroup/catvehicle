@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 
 Author: Jonathan Sprinkle, Sam Taylor, Alex Warren
@@ -34,6 +35,7 @@ This launch file loads the worlds and models for the catvehicle
 	  <arg name="gui" default="false"/>
 	  <arg name="headless" default="false"/>
 	  <arg name="debug" default="false"/>
+      <arg name="obstaclestopper" default="true"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find catvehicle)/worlds/neighborhood.world"/>
@@ -49,6 +51,7 @@ This launch file loads the worlds and models for the catvehicle
          command="$(find xacro)/xacro.py '$(find catvehicle)/urdf/catvehicle.xacro' roboname:='catvehicle'" />
 <include file="$(find catvehicle)/launch/catvehicle.launch">
     <arg name="robot_name" value="catvehicle"/>
+    <arg name="obstaclestopper" value="$(arg obstaclestopper)"/>
     <arg name="init_pose" value="-x 0 -y 0 -z 0"/>
     <arg name="config_file" value="catvehicle_control.yaml"/>
 </include>
