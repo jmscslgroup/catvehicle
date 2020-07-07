@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 
 Author: Jonathan Sprinkle, Sam Taylor, Alex Warren
@@ -34,6 +35,7 @@ This launch file loads the worlds and models for the catvehicle
 	  <arg name="gui" default="false"/>
 	  <arg name="headless" default="false"/>
 	  <arg name="debug" default="false"/>
+      <arg name="obstaclestopper" default="true"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find catvehicle)/worlds/canyonview_field.world"/>
@@ -51,6 +53,7 @@ This launch file loads the worlds and models for the catvehicle
 <include file="$(find catvehicle)/launch/catvehicle.launch">
     <arg name="robot_name" value="catvehicle"/>
     <arg name="init_pose" value="-x 1 -y 1 -z 0"/>
+    <arg name="obstaclestopper" value="$(arg obstaclestopper)"/>
     <arg name="config_file" value="catvehicle_control.yaml"/>
 </include>
 </group>

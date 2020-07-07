@@ -40,6 +40,7 @@ roslaunch catvehicle catvehicle_skidpan.launch
 	  <arg name="gui" default="false"/>
 	  <arg name="headless" default="false"/>
 	  <arg name="debug" default="false"/>
+      <arg name="obstaclestopper" default="true"/>
 
 <param name="use_sim_time" value="true"/>
 
@@ -59,6 +60,7 @@ roslaunch catvehicle catvehicle_skidpan.launch
     <arg name="robot_name" value="catvehicle"/>
     <arg name="init_pose" value="-x 1 -y 1 -z 0"/>
     <arg name="config_file" value="catvehicle_control.yaml"/>
+    <arg name="obstaclestopper" value="$(arg obstaclestopper)"/>
 </include>
 
 <!-- Uncomment this to get immediate motion from the car
