@@ -74,6 +74,10 @@ target_link_libraries( distanceEstimator ${catkin_LIBRARIES} )
 
 add_executable( distanceEstimatorSteeringBased src/distanceEstimatorSteeringBased.cpp )
 target_link_libraries( distanceEstimatorSteeringBased ${catkin_LIBRARIES})
+
+add_executable( velocityEstimator src/velocityEstimator.cpp )
+target_link_libraries( velocityEstimator ${catkin_LIBRARIES} )
+
 #############
 ## Install ##
 #############

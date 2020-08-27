@@ -107,16 +107,16 @@ class cmdvel2gazebo:
             # self.v is the linear *velocity*
             r = L/math.fabs(math.tan(self.z))
 
-            rL = r-(math.copysign(1,self.z)*(T/2.0));
+            rL = r-(math.copysign(1,self.z)*(T/2.0))
             rR = r+(math.copysign(1,self.z)*(T/2.0))
             msgRearR = Float64()
             # the right tire will go a little faster when we turn left (positive angle)
             # amount is proportional to the radius of the outside/ideal
-            msgRearR.data = self.x*rR/r;
+            msgRearR.data = self.x*rR/r
             msgRearL = Float64()
             # the left tire will go a little slower when we turn left (positive angle)
             # amount is proportional to the radius of the inside/ideal
-            msgRearL.data = self.x*rL/r;
+            msgRearL.data = self.x*rL/r
 
             self.pub_rearL.publish(msgRearL)
             self.pub_rearR.publish(msgRearR)
@@ -133,7 +133,7 @@ class cmdvel2gazebo:
         else:
             # if we aren't turning, everything is easy!
             msgRear = Float64()
-            msgRear.data = self.x;
+            msgRear.data = self.x
             self.pub_rearL.publish(msgRear)
             self.pub_rearR.publish(msgRear)
 
@@ -157,9 +157,3 @@ def main(argv):
 
 if __name__ == '__main__':
     main(sys.argv[1:])
-    try:
-        listener('catvehicle')
-    except rospy.ROSInterruptException:
-        pass
-
-
