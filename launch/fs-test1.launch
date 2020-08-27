@@ -65,7 +65,10 @@ TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 
 
          <node pkg="catvehicle" type="drive_lead.py" name="drive_lead_$(arg leader)" output="screen" required="true" args="$(arg csvfile) $(arg dbcfile)">
+            <remap from="cmd_vel" to="cmd_control_vel"/>
          </node>
+
+         <node pkg="hoffmansubsystem" type="hoffmansubsystem_node" name="hoffmansubsystem_$(arg leader)" output="screen" required="true"/>
 
     </group>
 
@@ -81,20 +84,22 @@ TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
             <arg name="config_file" value="catvehicle_control.yaml"/>
         </include>
 
-        <node pkg="kf" type="kf_node" name="kf_$(arg robot)" output="screen" required="true">
+        <!--node pkg="kf" type="kf_node" name="kf_$(arg robot)" output="screen" required="true">
             <remap from="d_relative" to="/$(arg robot)/distanceEstimatorSteeringBased/dist"/>
-        </node>
+        </node-->
 
-        <node name="velocityEstimator" pkg="catvehicle" type="velocityEstimator" output="screen">
-            <param name="dist_topic" value="/$(arg robot)/kf/dist"/>
+        <!--node name="velocityEstimator" pkg="catvehicle" type="velocityEstimator" output="screen">
+            <param name="dist_topic" value="/$(arg robot)/distanceEstimatorSteeringBased/dist"/>
             <param name="vel_topic" value="/$(arg robot)/v_relative"/>
-        </node>
+        </node-->
         
         <node pkg="fs" type="fs_node" name="fs_$(arg robot)" output="screen" required="true">
             <!--remap from="v_ref" to="/$(arg leader)/vel"/-->
-            <remap from="d_relative" to="/$(arg robot)/kf/dist"/>
+            <remap from="d_relative" to="/$(arg robot)/distanceEstimator/dist"/>
+            <remap from="cmd_vel" to="cmd_control_vel"/>
         </node>
-
+        
+        <node pkg="hoffmansubsystem" type="hoffmansubsystem_node" name="hoffmansubsystem_$(arg robot)" output="screen" required="true"/>
 
     </group>
 
