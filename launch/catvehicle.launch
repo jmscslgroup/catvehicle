@@ -70,18 +70,25 @@ output="screen" ns="/$(arg robot_name)" args="joint1_velocity_controller joint2_
     <remap from="/$(arg robot_name)/cmd_vel" to="/$(arg robot_name)/cmd_vel_safe" if="$(arg obstaclestopper)"/>
 </node>
 
-<node name="distanceEstimatorSteeringBased" pkg="catvehicle" type="distanceEstimatorSteeringBased" output="screen">
+<!--node name="distanceEstimatorSteeringBased" pkg="catvehicle" type="distanceEstimatorSteeringBased" output="screen">
     <param name="scan_topic" value="/$(arg robot_name)/front_laser_points"/>
     <param name="steering_topic" value="/$(arg robot_name)/steering"/>
     <remap from="/$(arg robot_name)/distanceEstimatorSteeringBased/dist" to="/$(arg robot_name)/distanceEstimatorSteeringBased/dist" />
     <remap from="/$(arg robot_name)/distanceEstimatorSteeringBased/Xdist" to="/$(arg robot_name)/distanceEstimatorSteeringBased/Xdist" />
     <remap from="/$(arg robot_name)/distanceEstimatorSteeringBased/Ydist" to="/$(arg robot_name)/distanceEstimatorSteeringBased/Ydist" />
     <remap from="/$(arg robot_name)/distanceEstimatorSteeringBased/angle" to="/$(arg robot_name)/distanceEstimatorSteeringBased/angle" />
-     <param name="tmin" value="-6.0"/><!-- This is like the xmin in the cartesian windowed estimator -->
-     <param name="tmax" value="3.0"/><!-- This is like the xmax in the cartesian windowed estimator -->
-     <param name="smin" value="0.0"/><!-- This is like the ymin in the cartesian windowed estimator -->
-     <param name="smax" value="80.0"/><!-- This is like the ymax in the cartesian windowed estimator -->
-     <param name="epsilon" value="0.005"/><!-- This is the minimum turning angle for the ring transformation vs a direct cartiesian calculation (to avoid infinite turning radius in calculation) -->
+     <param name="tmin" value="-6.0"/--><!-- This is like the xmin in the cartesian windowed estimator -->
+     <!--param name="tmax" value="3.0"/--><!-- This is like the xmax in the cartesian windowed estimator -->
+     <!--param name="smin" value="0.0"/--><!-- This is like the ymin in the cartesian windowed estimator -->
+     <!--param name="smax" value="80.0"/--><!-- This is like the ymax in the cartesian windowed estimator -->
+     <!--param name="epsilon" value="0.005"/--><!-- This is the minimum turning angle for the ring transformation vs a direct cartiesian calculation (to avoid infinite turning radius in calculation) -->
+
+<!--/node-->
+
+<node name="distanceEstimator" pkg="catvehicle" type="distanceEstimator" output="screen">
+    <param name="scan_topic" value="/$(arg robot_name)/front_laser_points"/>
+    <param name="angle_min" value="-10.0"/>
+    <param name="angle_max" value="10.0"/>
 
 </node>
 
