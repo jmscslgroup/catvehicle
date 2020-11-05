@@ -64,6 +64,7 @@ http://www.car-engineer.com/vehicle-inertia-calculation-tool/
     body given by meshlab. Actual length of the car may be slightly
     less and if require, we may use some offset to use this value
     anywhere -->
+    <!-- Wheelbase is roughly 2.8232111 m -->
     <xacro:property name="car_to_bumper" value="4.4324092962"/>
     <xacro:property name="car_COM_x" value="-0.0202"/>
     <xacro:property name="car_COM_y" value="0.0126"/>
