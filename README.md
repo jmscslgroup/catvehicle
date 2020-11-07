@@ -80,6 +80,7 @@ git clone https://github.com/jmscslgroup/sicktoolbox
 git clone https://github.com/jmscslgroup/sicktoolbox_wrapper
 git clone https://github.com/jmscslgroup/stepvel
 git clone https://github.com/jmscslgroup/cmdvel2gazebo
+git clone https://github.com/jmscslgroup/velodyne
 cd ..
 catkin_make
 ```
