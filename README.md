@@ -11,9 +11,9 @@ The CAT Vehicle is a ROS based simulator to facilitate the development of autono
 * [cmdvel2gazebo](https://github.com/jmscslgroup/cmdvel2gazebo)
 * Controller manager (allows the car to move around with ROS messages)
 ```shell
-  sudo apt-get install ros-melodic-controller-manager
-  sudo apt-get install ros-melodic-ros-control ros-melodic-ros-controllers
-  sudo apt-get install ros-melodic-gazebo-ros-control
+  sudo apt-get install ros-noetic-controller-manager
+  sudo apt-get install ros-noetic-ros-control ros-noetic-ros-controllers
+  sudo apt-get install ros-noetic-gazebo-ros-control
   ```
 
 # System Requirements
@@ -53,10 +53,10 @@ year={2018}
 # How to use it
 
 ## Installing ROS
-* Follow the steps mentioned in the [ROS wiki page](http://wiki.ros.org/melodic/Installation/Ubuntu%C2%A0) on how to install ROS Melodic. 
+* Follow the steps mentioned in the [ROS wiki page](http://wiki.ros.org/noetic/Installation/Ubuntu%C2%A0) on how to install ROS Melodic. 
 * In addition to that we are required to install some additional ros packages
 ```shell
-sudo apt-get install ros-melodic-velodyne ros-melodic-novatel-span-driver
+sudo apt-get install ros-noetic-velodyne ros-noetic-novatel-span-driver
 ```
 
 ## Creating catkin workspace
