@@ -89,6 +89,7 @@ catkin_make
 ## Sourcing workspace to the environment path
 ```bash
 echo "source ~/catvehicle_ws/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
 ```
 
 # Simple tutorial and examples
