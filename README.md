@@ -46,7 +46,7 @@ year={2018}
 ```
 
 # What's new
-* Released for Ubuntu 18.04 LTS, ROS Melodic and Gazebo 9.0
+* Released for Ubuntu 20.04 LTS, ROS Noetic and Gazebo 11.0
 * Support for front camera
 * More stable vehicle dynamics
 * Bug fixes and improvements
