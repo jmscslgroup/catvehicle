@@ -11,6 +11,7 @@ The CAT Vehicle is a ROS based simulator to facilitate the development of autono
 * [cmdvel2gazebo](https://github.com/jmscslgroup/cmdvel2gazebo)
 * Controller manager (allows the car to move around with ROS messages)
 ```shell
+  sudo apt-get update
   sudo apt-get install ros-noetic-controller-manager
   sudo apt-get install ros-noetic-ros-control ros-noetic-ros-controllers
   sudo apt-get install ros-noetic-gazebo-ros-control
