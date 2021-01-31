@@ -89,7 +89,7 @@ echo "source ~/catvehicle_ws/devel/setup.bash" >> ~/.bashrc
 ```
 
 # Simple tutorial and examples
-Follow the tutorials on the CAT Vehicle Testbed group on the [CPS Virtual Organization](https://cps-vo.org/group/CATVehicleTestbed) to see how to use the testbed.
+Follow the tutorials on the CAT Vehicle Testbed group on the [CPS Virtual Organization](https://cps-vo.org/node/31792) to see how to use the testbed.
 
 # Issues
 If you run into a problem, please feel free to post to [issues](https://github.com/jmscslgroup/catvehicle/issues). If the issue is urgent, please email to catvehicle@list.arizona.edu.
