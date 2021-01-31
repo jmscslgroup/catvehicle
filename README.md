@@ -56,7 +56,7 @@ year={2018}
 * Follow the steps mentioned in the [ROS wiki page](http://wiki.ros.org/noetic/Installation/Ubuntu%C2%A0) on how to install ROS Melodic. 
 * In addition to that we are required to install some additional ros packages
 ```shell
-sudo apt-get install ros-noetic-velodyne ros-noetic-novatel-span-driver
+sudo apt-get install ros-noetic-velodyne
 ```
 
 ## Creating catkin workspace
