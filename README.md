@@ -18,7 +18,7 @@ The CAT Vehicle is a ROS based simulator to facilitate the development of autono
   ```
 
 # System Requirements
-* Ubuntu 18.04 LTS (We cannot guarantee if it works on any other version of Ubuntu)
+* Ubuntu 20.04 LTS (We cannot guarantee if it works on any other version of Ubuntu)
 * RAM: 4GB required, > 8GB recommended.
 
 
