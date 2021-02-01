@@ -71,7 +71,7 @@ cd ..
 catkin_make
 ```
 
-At this point, you can extract this release package from [catvehicle-3.0.1](https://github.com/jmscslgroup/catvehicle/releases/download/3.0.1/catvehicle-3.0.1.tar.xz) and other dependent package into your src directory
+At this point, you can extract this repo and other dependent package into your src directory
 ```shell
 cd ~/catvehicle_ws/src
 git clone https://github.com/jmscslgroup/catvehicle
