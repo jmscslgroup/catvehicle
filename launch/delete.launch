@@ -1,0 +1,7 @@
+<launch>
+
+<arg name="robot_name" default="catvehicle"/>
+<node name="delete_spawner$(arg robot_name)" pkg="gazebo_ros" type="delete_model" respawn="false" output="screen"
+args="-urdf -model $(arg robot_name) -param robot_description"/>
+
+</launch>
