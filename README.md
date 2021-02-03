@@ -11,6 +11,7 @@ The CAT Vehicle is a ROS based simulator to facilitate the development of autono
 * [cmdvel2gazebo](https://github.com/jmscslgroup/cmdvel2gazebo)
 * Controller manager (allows the car to move around with ROS messages)
 ```shell
+  sudo apt-get update
   sudo apt-get install ros-melodic-controller-manager
   sudo apt-get install ros-melodic-ros-control ros-melodic-ros-controllers
   sudo apt-get install ros-melodic-gazebo-ros-control
@@ -71,7 +72,7 @@ cd ..
 catkin_make
 ```
 
-At this point, you can extract this release package from [catvehicle-3.0.1](https://github.com/jmscslgroup/catvehicle/releases/download/3.0.1/catvehicle-3.0.1.tar.xz) and other dependent package into your src directory
+At this point, you can clone this repo and other dependent package into your src directory
 ```shell
 cd ~/catvehicle_ws/src
 git clone https://github.com/jmscslgroup/catvehicle
@@ -88,6 +89,7 @@ catkin_make
 ## Sourcing workspace to the environment path
 ```bash
 echo "source ~/catvehicle_ws/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
 ```
 
 # Simple tutorial and examples
