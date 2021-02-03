@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/ivory/VersionControl/catvehicle_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/ivory/VersionControl/catvehicle_ws/src/can_to_ros/include/**",
+        "/home/ivory/VersionControl/catvehicle_ws/src/catvehicle/include/**",
+        "/home/ivory/VersionControl/catvehicle_ws/src/catvehiclevelodyne/include/**",
+        "/home/ivory/VersionControl/catvehicle_ws/src/control_toolbox/include/**",
+        "/home/ivory/VersionControl/catvehicle_ws/src/hector_slam/hector_geotiff/include/**",
+        "/home/ivory/VersionControl/catvehicle_ws/src/hector_slam/hector_map_tools/include/**",
+        "/home/ivory/VersionControl/catvehicle_ws/src/hector_slam/hector_mapping/include/**",
+        "/home/ivory/VersionControl/catvehicle_ws/src/hector_slam/hector_marker_drawing/include/**",
+        "/home/ivory/VersionControl/catvehicle_ws/src/realsense-ros/realsense2_camera/include/**",
+        "/home/ivory/VersionControl/catvehicle_ws/src/sicktoolbox/include/**",
+        "/home/ivory/VersionControl/catvehicle_ws/src/sparkle/include/**",
+        "/home/ivory/VersionControl/catvehicle_ws/src/sync/include/**",
+        "/home/ivory/VersionControl/catvehicle_ws/src/velodyne/velodyne_driver/include/**",
+        "/home/ivory/VersionControl/catvehicle_ws/src/velodyne/velodyne_pointcloud/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ]
+}
