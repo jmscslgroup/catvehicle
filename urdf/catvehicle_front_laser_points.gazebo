@@ -44,7 +44,7 @@ Sensors are included separately, based on the arguments passed to the xacro incl
         <sensor type="ray" name="sick_lms291">
               <pose>0 0 0 0 0 0</pose>
                    <visualize>true</visualize>
-                    <update_rate>50</update_rate>
+                    <update_rate>75</update_rate>
                        <ray>
                            <scan>
                                 <horizontal>

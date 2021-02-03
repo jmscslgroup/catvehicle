@@ -59,7 +59,7 @@ roslaunch azcar_sim stepvel.launch robot:=car1
     <param name="constVel" value="$(arg vel)"/>
     <param name="strAngle" value="$(arg strAng)"/>
     <node pkg="stepvel" type="stepvel_node" name="stepvel_$(arg robot)" output="screen" required="true"/>
-
+    <remap from="cmd_vel" to="cmd_control_vel"/>
 <!--
 <node name="recorder" pkg="rosbag" type="record" output="screen" args=" -o stepvel_ -a" />
 
@@ -86,6 +86,9 @@ roslaunch azcar_sim stepvel.launch robot:=car1
                     </node>
 
 -->
+
+<node pkg="hoffmansubsystem" type="hoffmansubsystem_node" name="hoffmansubsystem_$(arg robot)" output="screen" required="true"/>
+
 </group>
 
 

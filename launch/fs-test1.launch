@@ -50,7 +50,8 @@ TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
     
     <arg name="rosbag" default="false"/>
 
-    <arg name="csvfile" default="/home/ivory/CyverseData/JmscslgroupData/PandaData/2020_02_18/2020-02-18-13-00-42-209119__CAN_Messages.csv"/>
+    <!--arg name="csvfile" default="/home/ivory/CyverseData/JmscslgroupData/PandaData/2020_02_18/2020-02-18-13-00-42-209119__CAN_Messages.csv"/-->
+    <arg name="csvfile" default="/home/ivory/CyverseData/JmscslgroupData/PandaData/2020_07_08/2020-07-08-15-15-54_2T3MWRFVXLW056972_CAN_Messages.csv"/>
     <arg name="dbcfile" default="/home/ivory/VersionControl/Jmscslgroup/strym/examples/newToyotacode.dbc"/>
 
     <group ns="$(arg leader)">
@@ -59,7 +60,7 @@ TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
         <include file="$(find catvehicle)/launch/catvehicle.launch">
             <arg name="robot_name" value="$(arg leader)"/>
             <arg name="obstaclestopper" value="$(arg obstaclestopper)"/>
-            <arg name="init_pose" value="-x 15.0 -y 0.0 -z 0.0"/>
+            <arg name="init_pose" value="-x 20.0 -y 0.0 -z 0.0"/>
             <arg name="config_file" value="catvehicle_control.yaml"/>
         </include>
 
@@ -89,7 +90,7 @@ TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
         </node-->
 
         <!--node name="velocityEstimator" pkg="catvehicle" type="velocityEstimator" output="screen">
-            <param name="dist_topic" value="/$(arg robot)/distanceEstimatorSteeringBased/dist"/>
+            <param name="dist_topic" value="/$(arg robot)/distanceEstimator/dist"/>
             <param name="vel_topic" value="/$(arg robot)/v_relative"/>
         </node-->
         
