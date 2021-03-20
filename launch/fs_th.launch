@@ -42,10 +42,10 @@ TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
     <node pkg="fs_th" type="fs_th_node" name="fs_th_$(arg robot)" output="screen" required="true">
         <!--remap from="v_ref" to="/$(arg robot)/v_ref"/-->
         <remap from="d_relative" to="$(arg d_relative)"/>
-        <!--remap from="cmd_vel" to="cmd_control_vel"/-->
+        <remap from="cmd_vel" to="cmd_control_vel"/>
     </node>
 
-    <!--node pkg="hoffmansubsystem" type="hoffmansubsystem_node" name="hoffmansubsystem_$(arg robot)" output="screen" required="true"/-->
+    <node pkg="hoffmansubsystem" type="hoffmansubsystem_node" name="hoffmansubsystem_$(arg robot)" output="screen" required="true"/>
 </group>
 
 
