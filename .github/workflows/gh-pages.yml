@@ -12,13 +12,14 @@ jobs:
 
     - name: Install dependencies
       run: |
-        sudo apt install pandoc -y
-        sudo apt install python3.7 -y
-        sudo apt install python-pip
-        python -m pip install --upgrade pip
+        sudo apt-get install pandoc -y
+        sudo apt-get install python3.7 -y
+        sudo apt-get install python-pip
+        python3 -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Build sphinx documentation
       run: |
+        cd docs
         make html
         touch build/html/.nojekyll
 
