@@ -54,7 +54,7 @@ jobs:
     - name: add commit push
       run: |
         git config --global user.email "rahulbhadani@email.arizona.edu"
-        git config --global user.name "RahulBhadani@Action"
+        git config --global user.name "rahulbhadani"
         git add .
         git commit -m "Updating documenation"
         git push -u origin gh-pages
