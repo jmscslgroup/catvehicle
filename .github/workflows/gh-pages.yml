@@ -9,7 +9,7 @@ jobs:
     name: Build
     runs-on: ubuntu-18.04
     steps:
-    - name:github checkout
+    - name: github checkout
     - uses: actions/checkout@v2
     - name: Install dependencies
       run: |
