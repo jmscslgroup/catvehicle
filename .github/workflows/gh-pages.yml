@@ -46,6 +46,7 @@ jobs:
     - name: greate gh-pages
       run: |
         git checkout gh-pages
-        git checkout melodic_gazebo-9 -- docs/build/html
+        cp -r docs/build/html/* ./
+        rm -rf docs/
         ls
         git branch -a
