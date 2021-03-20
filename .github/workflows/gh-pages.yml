@@ -50,3 +50,9 @@ jobs:
         rm -rf docs/
         ls
         git branch -a
+
+    - name: add commit push
+      run: |
+        git add .
+        git commit -m "Updating documenation"
+        git push -u origin gh-pages
