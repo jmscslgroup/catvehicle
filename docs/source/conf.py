@@ -17,9 +17,6 @@ if "six" in sys.modules:
             sys.path.remove(pypath)
     del sys.modules["six"]
 
-import matplotlib 
-
-matplotlib.use("agg")
 
 HERE = Path(__file__).parent
 sys.path.insert(0, f"{HERE.parent.parent}")
