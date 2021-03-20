@@ -58,6 +58,7 @@ jobs:
       run: |
         git config --global user.email "rahulbhadani@email.arizona.edu"
         git config --global user.name "rahulbhadani"
+        touch .nojekyll
         git add .
         git commit -m "Updating documenation"
         git push
