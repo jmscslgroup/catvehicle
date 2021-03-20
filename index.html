@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>catvehicle - A ROS package for autonomous vehicle applications &mdash; catvehicle melodic_gazebo-9 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="About CAT Vehicle" href="about.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> catvehicle
+          
+
+          
+            
+            <img src="_static/favicon.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                melodic_gazebo-9
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Main</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About CAT Vehicle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">catvehicle</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>catvehicle - A ROS package for autonomous vehicle applications</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/jmscslgroup/catvehicle/blob/master/docs/source/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<p><a class="reference external" href="https://pypi.org/project/catvehicle"><img alt="PyPI" src="https://img.shields.io/pypi/v/catvehicle.svg" /></a> <a class="reference external" href="https://travis-ci.com/jmscslgroup/catvehicle/"><img alt="Travis" src="https://travis-ci.com/jmscslgroup/catvehicle.svg?branch=master" /></a></p>
+<div class="section" id="catvehicle-a-ros-package-for-autonomous-vehicle-applications">
+<h1>catvehicle - A ROS package for autonomous vehicle applications<a class="headerlink" href="#catvehicle-a-ros-package-for-autonomous-vehicle-applications" title="Permalink to this headline">¶</a></h1>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jmscslgroup/catvehicle/melodic_gazebo-9/docs/source/favicon.png"><img alt="https://raw.githubusercontent.com/jmscslgroup/catvehicle/melodic_gazebo-9/docs/source/favicon.png" class="align-left" src="https://raw.githubusercontent.com/jmscslgroup/catvehicle/melodic_gazebo-9/docs/source/favicon.png" style="width: 500px;" /></a>
+<p><strong>catvehicle</strong>, is a ROS package for autonomous vehicle applications.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="section" id="contributing-to-the-project">
+<h2>Contributing to the project<a class="headerlink" href="#contributing-to-the-project" title="Permalink to this headline">¶</a></h2>
+<p>Feel free to submit an <a class="reference external" href="https://github.com/jmscslgroup/catvehicle/issues/new/choose">issue</a>
+or send us an <a class="reference external" href="mailto:rahulbhadani&#37;&#52;&#48;email&#46;arizona&#46;edu">email</a>.
+If you like to contribute to this project, please fork this repository to your GitHub account,
+create a new branch for yourself and send a pull request for the merge. After reviewing the changes,
+we will decide if this is a good place to add your changes.
+Your help to improve <strong>catvehicle</strong> is highly appreciated.</p>
+</div>
+<div class="section" id="licensing">
+<h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">License: MIT License</div>
+<div class="line">Copyright Rahul Bhadani, Jonathan Sprinkle, Arizona Board of Regents</div>
+<div class="line">Initial Date: Nov 12, 2019</div>
+<div class="line">Permission is hereby granted, free of charge, to any person obtaining</div>
+<div class="line">a copy of this software and associated documentation files</div>
+<div class="line">(the “Software”), to deal in the Software without restriction, including</div>
+<div class="line">without limitation the rights to use, copy, modify, merge, publish,</div>
+<div class="line">distribute, sublicense, and/or sell copies of the Software, and to</div>
+<div class="line">permit persons to whom the Software is furnished to do so, subject</div>
+<div class="line">to the following conditions:</div>
+</div>
+<div class="line-block">
+<div class="line">The above copyright notice and this permission notice shall be</div>
+<div class="line">included in all copies or substantial portions of the Software.</div>
+</div>
+<div class="line-block">
+<div class="line">THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF</div>
+<div class="line">ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED</div>
+<div class="line">TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A</div>
+<div class="line">PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT</div>
+<div class="line">SHALL THE AUTHORS, COPYRIGHT HOLDERS OR ARIZONA BOARD OF REGENTS</div>
+<div class="line">BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN</div>
+<div class="line">AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</div>
+<div class="line">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE</div>
+<div class="line">OR OTHER DEALINGS IN THE SOFTWARE.</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="about.html" class="btn btn-neutral float-right" title="About CAT Vehicle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Rahul Bhadani.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
