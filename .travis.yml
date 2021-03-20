@@ -1,0 +1,29 @@
+language: python
+
+python:
+  - "3.7"
+
+before_install:
+    - sudo apt-get -y install pandoc
+    - pip install -U pip
+    - export PYTHONPATH=$PYTHONPATH:$(pwd)
+    - pip install -r requirements.txt
+    - pip install 'prompt-toolkit<2.1.0,>=2.0.0' --force-reinstall
+
+
+script:
+  - cd docs
+  # Use Sphinx to make the html docs
+  - make html
+  - touch build/html/.nojekyll
+
+# Tell Travis CI to copy the documentation to the gh-pages branch of
+# your GitHub repository.
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+  keep-history: true
+  on:
+    branch: master
+  local-dir: docs/build/html
