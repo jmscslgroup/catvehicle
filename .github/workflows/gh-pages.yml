@@ -46,19 +46,19 @@ jobs:
         touch build/html/.nojekyll
         git branch -a
 
-#    - name: greate gh-pages
-#      run: |
-#        git checkout gh-pages
-#        cp -r docs/build/html/* ./
-#        rm -rf docs/
-#        ls
-#        git branch -a
-#
-#    - name: add commit push
-#      run: |
-#        git config --global user.email "rahulbhadani@email.arizona.edu"
-#        git config --global user.name "rahulbhadani"
-#        git add .
-#        git commit -m "Updating documenation"
-#        git push
+    - name: greate gh-pages
+      run: |
+        git checkout gh-pages
+        cp -r docs/build/html/* ./
+        rm -rf docs/
+        ls
+        git branch -a
+
+    - name: add commit push
+      run: |
+        git config --global user.email "rahulbhadani@email.arizona.edu"
+        git config --global user.name "rahulbhadani"
+        git add .
+        git commit -m "Updating documenation"
+        git push
 
