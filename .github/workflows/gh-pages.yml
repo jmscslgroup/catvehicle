@@ -42,3 +42,10 @@ jobs:
         cd docs
         make html
         touch build/html/.nojekyll
+
+    - name: greate gh-pages
+      run: |
+        git checkout gh-pages
+        git checkout melodic_gazebo-9 docs/build/html
+        ls
+        git branch -a
