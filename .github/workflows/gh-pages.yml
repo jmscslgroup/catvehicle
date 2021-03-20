@@ -37,6 +37,11 @@ jobs:
     - name: Install requirements
       run: pip install -r requirements.txt
 
-    - uses: ammaraskar/sphinx-action@master
-      with:
-        docs-folder: "docs/"
+    - name: change to docs directory
+      run: cd docs
+
+    - name: make html
+      run: make html
+
+    - name: touch
+      run: touch build/html/.nojekyll
