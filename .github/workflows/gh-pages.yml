@@ -57,4 +57,9 @@ jobs:
         git config --global user.name "rahulbhadani"
         git add .
         git commit -m "Updating documenation"
-        git push -u origin gh-pages
+
+    - name: push
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
