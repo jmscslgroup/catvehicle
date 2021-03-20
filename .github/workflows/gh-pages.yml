@@ -9,8 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Software properties
       run: sudo apt-get install -y software-properties-common
