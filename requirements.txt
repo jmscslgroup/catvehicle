@@ -21,4 +21,4 @@ nbsphinx
 pandoc
 pandocfilters
 yolk3k
-
+matplotlib==3.2.1
