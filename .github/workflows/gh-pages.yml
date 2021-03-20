@@ -9,6 +9,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    
+    - name: Install pandoc
+      run: sudo apt-get -y install pandoc
+
+    - name: Install python
+      run: sudo apt-get -y install python3.7
+
+    - name: Install pip
+      run: sudo apt-get -y install python-pip
+
+    - name: Upgrade pip
+      run: pip install -U pip
+
+    - name: pythonpath export
+      run: sudo apt-get -y install pandoc
+
+    - name: Install requirements
+      run: pip install -r requirements.txt
+
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "docs/"
