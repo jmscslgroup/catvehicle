@@ -1,5 +1,3 @@
-|PyPI| |Travis|
-
 catvehicle - A ROS package for autonomous vehicle applications
 ==================================================================
 
