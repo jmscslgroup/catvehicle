@@ -27,9 +27,6 @@ class layout:
      `layout`: Base class for Simulation for Connected-and-Inteligent-Vehicle CPS. 
     Creates simulation layout for simulating vehicles and control.
 
-    `layout`: Base class for Simulation for Connected-and-Inteligent-Vehicle CPS. 
-    Creates simulation layout for simulating vehicles and control.
-
     Parameters
     -------------
     X: `list`, `double`
@@ -222,6 +219,8 @@ class layout:
 
         self.callflag["roscore"] = True
         time.sleep(5)
+
+
 
     def bagrecord(self, prefix = "catvehicle", **kwargs):
         """
@@ -602,7 +601,7 @@ class layout:
         initial_distance: Union[`double`, list]
             When providing linear route, make sure, initial distance is 0
 
-        route: Union["circular", "lear"]
+        route: Union["circular", "linear"]
 
         """
 
@@ -656,7 +655,7 @@ class layout:
 
         else:
             if route == "linear":
-                _LOGGER.error("With linear route, control method for leader vehicle in the platoon onlyt works with uniform and injector control method. ")
+                _LOGGER.error("With linear route, control method for leader vehicle in the platoon only works with uniform and injector control method. ")
 
             else:
                 if control_method[0].lower() == "idm":
@@ -746,7 +745,7 @@ class layout:
                 self.launchcontrol_obj.append(launchobj)
             
 
-        pass
+        
         for n in range(1, self.n_vehicles):
             _LOGGER.info("Control node with index {} started".format(n))
             self.launchcontrol_obj[n].start()
