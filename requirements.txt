@@ -22,4 +22,4 @@ pandoc
 pandocfilters
 yolk3k
 matplotlib==3.2.1
-Pygments==2.3.1
+Pygments==2.6.1
