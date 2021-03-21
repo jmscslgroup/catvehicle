@@ -5,7 +5,16 @@ catvehicle - A ROS package for autonomous vehicle applications
    :width: 500px
    :align: left
 
-**catvehicle**, is a ROS package for autonomous vehicle applications.
+CAT Vehicle Testbed provides a ROS package **catvehicle** that a ROS based simulator to facilitate the development 
+of autonomous vehicle applications. This repository houses the files that utilize the Gazebo simulator, and 
+additional interfaces to the physical CAT Vehicle Testbed available at the University of Arizona - Department of 
+Electrical and Computer Engineering.
+
+
+The testbed includes a simulated physics-based model of the autonomous vehicle that mimics a real world vehicle
+capable of driving autonomously. In addition to that, simulator provides support to spawn multiple autonomous vehicle
+in simulation that facilitates the development of application requiring multi-vehicle scenario.
+
 
 |
 |
@@ -24,29 +33,36 @@ Your help to improve **catvehicle** is highly appreciated.
 Licensing
 ^^^^^^^^^^
 
-| License: MIT License 
-| Copyright Rahul Bhadani, Jonathan Sprinkle, Arizona Board of Regents
-| Initial Date: Nov 12, 2019
-| Permission is hereby granted, free of charge, to any person obtaining 
-| a copy of this software and associated documentation files 
-| (the "Software"), to deal in the Software without restriction, including
-| without limitation the rights to use, copy, modify, merge, publish,
-| distribute, sublicense, and/or sell copies of the Software, and to 
-| permit persons to whom the Software is furnished to do so, subject 
-| to the following conditions:
+| Copyright (c) Arizona Board of Regents; The University of Arizona All rights reserved
+| Permission is hereby granted, without written agreement and without license or royalty fees, to use, 
+| copy, modify, and distribute this software and its documentation for any purpose, provided that the 
+| above copyright notice and the following two paragraphs appear in all copies of this software.
 
-| The above copyright notice and this permission notice shall be 
-| included in all copies or substantial portions of the Software.
+| IN NO EVENT SHALL THE ARIZONA BOARD OF REGENTS BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT, SPECIAL, 
+| INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, 
+| EVEN IF THE ARIZONA BOARD OF REGENTS HAS BEEN | ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-| THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF 
-| ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED 
-| TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-| PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT 
-| SHALL THE AUTHORS, COPYRIGHT HOLDERS OR ARIZONA BOARD OF REGENTS
-| BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN 
-| AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
-| OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
-| OR OTHER DEALINGS IN THE SOFTWARE.
+| THE ARIZONA BOARD OF REGENTS SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
+| THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE PROVIDED 
+| HEREUNDER IS ON AN "AS IS" BASIS, AND THE ARIZONA BOARD OF REGENTS HAS NO OBLIGATION TO PROVIDE 
+| MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
+
+
+|
+|
+|
+
+Authors and contributors
+-------------------------------
+* Jonathan Sprinkle (sprinkjm@email.arizona.edu)
+* Rahul Bhadani (rahulbhadani@email.arizona.edu)
+* Sam Taylor
+* Kennon McKeever (kennondmckeever@email.arizona.edu)
+* Alex Warren
+* Swati Munjal (smunjal@email.arizona.edu)
+* Ashley Kang (askang@email.arizona.edu)
+* Matt Bunting (mosfet@email.arizona.edu)
+* Sean Whitsitt
 
 .. toctree::
    :caption: Main
