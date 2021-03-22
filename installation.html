@@ -101,6 +101,9 @@
 <li class="toctree-l1"><a class="reference internal" href="about.html">About CAT Vehicle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#for-mac">For Mac:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#for-windows">For Windows:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#installations-and-quick-start">1. Installations and Quick Start</a></li>
 </ul>
 
             
@@ -196,12 +199,214 @@
 </style>
 <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>catvehicle can be used with ROS Melodic or ROS Noetic</p>
-<div class="section" id="pypi">
-<h2>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h2>
-<p>Currently pip install is not supported.</p>
+<p>catvehicle can be used with ROS Melodic or ROS Noetic. For this installation in particular we will be using ROS Noetic.</p>
+<div class="section" id="virtual-machine-installation">
+<h2>Virtual Machine Installation<a class="headerlink" href="#virtual-machine-installation" title="Permalink to this headline">¶</a></h2>
+<p>This is the installation of virtual software to host Ubuntu 20.04.
+There are several virtualization softwares. We recommend using VMWare which is provided through The University of Arizona software licensing.
+If you are running windows, you may also use dual boot.
+In this section we will go over how to install VMWare on your machine.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have an Ubuntu running system, you do not need to install a virtual machine software.
+This tutorial does not go over how to install VirtualBox or Dual boot, though those are options.</p>
+</div>
+<div class="section" id="vmware">
+<h3>VMware<a class="headerlink" href="#vmware" title="Permalink to this headline">¶</a></h3>
+<p>For this section you may use the <a class="reference external" href="https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?cmi_cs=1&amp;cmi_mnuMain=16a020b5-ed3c-df11-b4ab-0030487d8897&amp;ws=c6fcd2a5-a432-de11-9d57-0030485a8df0&amp;vsro=8">software license</a> through The University of Arizona.
+If you do not have an account, you may use the <a class="reference external" href="https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/15_0">Free VMware for  Windows or Linux.</a>
+For Mac you need the <a class="reference external" href="https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/15_0">Free Fushion VMware License.</a></p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Make sure to choose VMware Workstation 16.x Pro for a Windows or Linux computer
+and VMware Fushion 12 Pro for Mac.</p>
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="for-mac">
+<h1>For Mac:<a class="headerlink" href="#for-mac" title="Permalink to this headline">¶</a></h1>
+<p>Once you have downloaded VMware Fusion 12 Pro, open the disk image file and double click to install.
+You will get a pop up saying “VMware Fusion is an app downloaded from the internet”, go ahead and open it.
+Then you need to authenticate and allow the application to run.
+After the initialization screen, allow the system extension to proceed through the system preference.
+To do this you need to click on the open system preference, and allow for the system extension.
+Agree to the Lincense.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you were able to download VMWare through The University of Arizona, go ahead and enter the license number.
+If you got it through the website for free, go ahead and select the option to try VMware for 30 days.</p>
+</div>
+<p>Click Done after the installation has been completed.</p>
+</div>
+<div class="section" id="for-windows">
+<h1>For Windows:<a class="headerlink" href="#for-windows" title="Permalink to this headline">¶</a></h1>
+<p>Once you have downloaded VMware Workstation 16x Pro, open the disk image file right click on it and run as an administrator.
+Click next on all the windows, if you obtained the license through The University of Arizona, you may enter the license number.
+If not you may do select the 30 day trial.</p>
+<p>You may download <a class="reference external" href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> from its website.
+Select your computer’s operating system. Once downloaded, you may install it.</p>
+<p>This option works well with Windows already installed. You will need an empty USB drive.</p>
+<div class="section" id="ubuntu-desktop-download">
+<h2>Ubuntu Desktop Download<a class="headerlink" href="#ubuntu-desktop-download" title="Permalink to this headline">¶</a></h2>
+<p>This section will help with installing Ubuntu 20.04 LTS.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you already have Ubuntu 20.04 LTS as your running system you may skip to the next section where we install ROS.</p>
+</div>
+<div class="section" id="before-installing">
+<h3>Before Installing<a class="headerlink" href="#before-installing" title="Permalink to this headline">¶</a></h3>
+<p>Before we continue, please make sure to have your virtual software up and running.
+The installation works with VMWare or VirtualBox.</p>
+</div>
+<div class="section" id="istallation-steps-for-vmware">
+<h3>Istallation Steps for VMware:<a class="headerlink" href="#istallation-steps-for-vmware" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Download Ubuntu Desktop from the <a class="reference external" href="https://ubuntu.com/download/desktop">Ubuntu Download Page</a></p></li>
+<li><p>Make sure it is Ubuntu 20.04.2.0 LTS.</p></li>
+<li><p>Open VMware and select <strong>Create a new virtual machine</strong>.</p></li>
+<li><p>In the <em>New Virtual Wizard</em> select <strong>I will instal the operating system later.</strong></p></li>
+<li><p>Next, select the operating system <strong>Linux</strong> with <strong>Ubuntu 64-bit</strong> as the version.</p></li>
+<li><p>Click <strong>Next</strong>, you may choose to rename your system, and chose a path for the virtual machine.</p></li>
+<li><p>Select your <strong>Maximum disk size (GB)</strong> to be at least <strong>100</strong> and <strong>Split virtual disk into multiple files</strong></p></li>
+<li><p>Click <em>Next</em>, then click on <strong>customize hardware</strong> and change the <em>Memory</em> from 2GB to <strong>8GB</strong>.</p></li>
+<li><p>Scroll down to the <strong>New CD/DVD (SATA)</strong> option and select <strong>Use ISO inage file:</strong> find Ubuntu image you had previously downloaded.</p></li>
+<li><p>Click on <strong>close</strong> then <strong>finish</strong>.</p></li>
+<li><p>Your newly instlaled virtual machine should be displayed on the left side panel. Click on <strong>Play Virtual Machine</strong>.</p></li>
+<li><p>Once the Welcome screen appears, select the language and <strong>Install Ubuntu</strong>.</p></li>
+<li><p>In the <em>Updates and Other Software screen</em> make sure to select <strong>Normal installation</strong> and click continue.</p></li>
+<li><p>In the <em>Installation type</em> screen select <strong>Erase disk and install Ubutu</strong>.</p></li>
+<li><p>Click <strong>Install now</strong> and then <strong>continue</strong>.</p></li>
+<li><p>Select your region and then complete the user information screen.</p></li>
+<li><p>Click on complete installation, and wait until the installation to complete.</p></li>
+<li><p>Once the installation is complete click on <strong>restart now</strong> and wait for the system to restart.</p></li>
+</ol>
+<p>Now you should have a login screen and ready to move on to the next step of the installation.</p>
+</div>
+</div>
+<div class="section" id="ros-noetic-installation">
+<h2>ROS-noetic Installation<a class="headerlink" href="#ros-noetic-installation" title="Permalink to this headline">¶</a></h2>
+<p>If you got this far, you should have Ubuntu 20.04.2.0 LTS running.</p>
+<p>In this section we will be installing and making sure that ROS is running.
+You may visit the official site at <a class="reference external" href="http://wiki.ros.org/noetic/Installation/Ubuntu">Ubuntu install of ROS Noetic</a></p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Make sure to choose Noetic for Ubuntu.</p>
+</div>
+<p>Set up your source list, to make sure your software accepts ROS packages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#39;</span>
+</pre></div>
+</div>
+<p>Set your keys:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">adv</span> <span class="o">--</span><span class="n">keyserver</span> <span class="s1">&#39;hkp://keyserver.ubuntu.com:80&#39;</span> <span class="o">--</span><span class="n">recv</span><span class="o">-</span><span class="n">key</span> <span class="n">C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654</span>
+</pre></div>
+</div>
+<p>Make sure your Debian package index is up to date:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+</pre></div>
+</div>
+<p>Install ROS-Full-Desktop:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">noetic</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">full</span>
+</pre></div>
+</div>
+<p>Set up your environment (you must source this script in every bash terminal you use ROS in):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">ros</span><span class="o">/</span><span class="n">noetic</span><span class="o">/</span><span class="n">setup</span><span class="o">.</span><span class="n">bash</span>
+</pre></div>
+</div>
+<p>Install Tool for building packages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">rosdep</span> <span class="n">python3</span><span class="o">-</span><span class="n">rosinstall</span> <span class="n">python3</span><span class="o">-</span><span class="n">rosinstall</span><span class="o">-</span><span class="n">generator</span> <span class="n">python3</span><span class="o">-</span><span class="n">wstool</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span>
+</pre></div>
+</div>
+<p>Install and initialize rosdep to use many ROS tools:</p>
+<p>Install:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">rosdep</span>
+</pre></div>
+</div>
+<p>Initialize:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">rosdep</span> <span class="n">init</span>
+</pre></div>
+</div>
+<p>Now that you have ROS install, you may test it by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">roscore</span>
+</pre></div>
+</div>
+<p>This will run ROS and get something like:</p>
+<img alt="_images/roscore-output.jpg" src="_images/roscore-output.jpg" />
+</div>
+<div class="section" id="installing-the-catvehicle-simulator">
+<h2>Installing the CATvehicle Simulator<a class="headerlink" href="#installing-the-catvehicle-simulator" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can find the instructions on the github repository at: <a class="reference external" href="https://github.com/jmscslgroup/catvehicle/tree/noetic_gazebo-11">https://github.com/jmscslgroup/catvehicle/tree/noetic_gazebo-11</a></p>
+<p>Make sure that you are using the <strong>Noetic-gazebo-11 branch</strong>, this is cruicial for a successful installation.</p>
+</div>
+<p>First, let’s make sure that all the necessary packages are installed for the simulator to run properly.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">noetic</span><span class="o">-</span><span class="n">controller</span><span class="o">-</span><span class="n">manager</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">noetic</span><span class="o">-</span><span class="n">ros</span><span class="o">-</span><span class="n">control</span> <span class="n">ros</span><span class="o">-</span><span class="n">noetic</span><span class="o">-</span><span class="n">ros</span><span class="o">-</span><span class="n">controllers</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">noetic</span><span class="o">-</span><span class="n">gazebo</span><span class="o">-</span><span class="n">ros</span><span class="o">-</span><span class="n">control</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">noetic</span><span class="o">-</span><span class="n">velodyne</span>
+</pre></div>
+</div>
+<p>Let’s create a working space:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~</span>
+<span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">catvehicle_ws</span><span class="o">/</span><span class="n">src</span>
+<span class="n">cd</span> <span class="n">catvehicle_ws</span><span class="o">/</span><span class="n">src</span>
+<span class="n">catkin_init_workspace</span>
+<span class="n">cd</span> <span class="o">..</span>
+<span class="n">catkin_make</span>
+</pre></div>
+</div>
+<p>Now you may clone the Github repository and other dependent package into your src directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">catvehicle_ws</span><span class="o">/</span><span class="n">src</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jmscslgroup</span><span class="o">/</span><span class="n">catvehicle</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jmscslgroup</span><span class="o">/</span><span class="n">obstaclestopper</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jmscslgroup</span><span class="o">/</span><span class="n">control_toolbox</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jmscslgroup</span><span class="o">/</span><span class="n">sicktoolbox</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jmscslgroup</span><span class="o">/</span><span class="n">sicktoolbox_wrapper</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jmscslgroup</span><span class="o">/</span><span class="n">stepvel</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jmscslgroup</span><span class="o">/</span><span class="n">cmdvel2gazebo</span>
+<span class="n">cd</span> <span class="n">catvehicle</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">noetic_gazebo</span><span class="o">-</span><span class="mi">11</span>
+<span class="n">cd</span> <span class="o">..</span>
+<span class="n">cd</span> <span class="o">..</span>
+<span class="n">catkin_make</span>
+</pre></div>
+</div>
+<p>Source workspace to the environment path</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;source ~/catvehicle_ws/devel/setup.bash&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">source</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">source</span> <span class="o">./</span><span class="n">devel</span><span class="o">/</span><span class="n">setup</span><span class="o">.</span><span class="n">bash</span>
+</pre></div>
+</div>
+<p>Run the CATvehicle using ROS</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">roslaunch</span> <span class="n">catvehicle</span> <span class="n">catvehicle_neighborhood</span><span class="o">.</span><span class="n">launch</span>
+</pre></div>
+</div>
+<p>Open a new Tab and check to see the Rostopic list</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rostopic</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>Source the workspace on the newly opened tab:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">devel</span><span class="o">/</span><span class="n">setup</span><span class="o">.</span><span class="n">bash</span>
+</pre></div>
+</div>
+<p>Finally launch Gagebo</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gzclient</span>
+</pre></div>
+</div>
+<p>Congratulations, now have a CATvehicle running simulator!</p>
+</div>
+</div>
+<div class="section" id="installations-and-quick-start">
+<h1>1. Installations and Quick Start<a class="headerlink" href="#installations-and-quick-start" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial video demonstrates how to install <code class="code docutils literal notranslate"><span class="pre">Ros-noetic</span></code>.</p>
+<div class="youtube_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/ZNqekNFKDuc" style="border: 0; height: 345px; width: 560px">
+</iframe></div><p>This tutorial video demonstrates how to install <code class="code docutils literal notranslate"><span class="pre">CATvehicle</span> <span class="pre">Simulator</span></code>.</p>
+<div class="youtube_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/CsjsgmYSqYs" style="border: 0; height: 345px; width: 560px">
+</iframe></div></div>
 
 
            </div>
