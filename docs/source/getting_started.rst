@@ -9,9 +9,13 @@ System Prerequisites
 
 CAT Vehicle workflow at a glance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The installation process: 
-1. :doc:`ve-installation`
-2. :doc:`ubuntuinstall`
-3. :doc:`rosinstallation`
-4. :doc:`catsimulator`
+**The installation process:**
+
+#. :doc:`ve-installation`
+   
+#. :doc:`ubuntuinstall`
+   
+#. :doc:`rosinstallation`
+   
+#. :doc:`catsimulator`
 
