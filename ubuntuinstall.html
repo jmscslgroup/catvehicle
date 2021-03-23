@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>About CAT Vehicle &mdash; catvehicle melodic_gazebo-9 documentation</title>
+  <title>Ubuntu Desktop Download &mdash; catvehicle melodic_gazebo-9 documentation</title>
   
 
   
@@ -41,11 +41,11 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-    <link rel="author" title="About these documents" href="#" />
+    <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Getting Started" href="getting_started.html" />
-    <link rel="prev" title="catvehicle - A ROS package for autonomous vehicle applications" href="index.html" /> 
+    <link rel="next" title="ROS-noetic Installation" href="rosinstallation.html" />
+    <link rel="prev" title="Getting Started" href="getting_started.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -99,9 +99,9 @@
             
               <p class="caption"><span class="caption-text">Main</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">About CAT Vehicle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About CAT Vehicle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ubuntuinstall.html">Ubuntu Desktop Download</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ubuntu Desktop Download</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rosinstallation.html">ROS-noetic Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="catsimulator.html">Installing the CATvehicle Simulator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="videotutorials.html">Video tutorials</a></li>
@@ -153,14 +153,14 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>About CAT Vehicle</li>
+      <li>Ubuntu Desktop Download</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/jmscslgroup/catvehicle/blob/master/docs/source/about.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/jmscslgroup/catvehicle/blob/master/docs/source/ubuntuinstall.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -198,9 +198,42 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="about-cat-vehicle">
-<h1>About CAT Vehicle<a class="headerlink" href="#about-cat-vehicle" title="Permalink to this headline">¶</a></h1>
-<p><strong>CAT Vehicle</strong> is ROS package for Autonomous Vehicle Simulation that facilitates the development of Connected-and-Autonomous Vehicle applications.</p>
+<div class="section" id="ubuntu-desktop-download">
+<h1>Ubuntu Desktop Download<a class="headerlink" href="#ubuntu-desktop-download" title="Permalink to this headline">¶</a></h1>
+<p>This section will help with installing Ubuntu</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you already have Ubuntu 20.04 LTS as your running system you may skip to the next section where we install ROS.</p>
+</div>
+<div class="section" id="before-installing">
+<h2>Before Installing<a class="headerlink" href="#before-installing" title="Permalink to this headline">¶</a></h2>
+<p>Before we continue, please make sure to have your virtual software up and running.
+The installation works with VMWare or VirtualBox.</p>
+</div>
+<div class="section" id="istallation-steps-for-vmware">
+<h2>Istallation Steps for VMware:<a class="headerlink" href="#istallation-steps-for-vmware" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Download Ubuntu Desktop from the <a class="reference external" href="https://ubuntu.com/download/desktop">Ubuntu Download Page</a></p></li>
+<li><p>Make sure it is Ubuntu 20.04.2.0 LTS.</p></li>
+<li><p>Open VMware and select <strong>Create a new virtual machine</strong>.</p></li>
+<li><p>In the <em>New Virtual Wizard</em> select <strong>I will instal the operating system later.</strong></p></li>
+<li><p>Next, select the operating system <strong>Linux</strong> with <strong>Ubuntu 64-bit</strong> as the version.</p></li>
+<li><p>Click <strong>Next</strong>, you may choose to rename your system, and chose a path for the virtual machine.</p></li>
+<li><p>Select your <strong>Maximum disk size (GB)</strong> to be at least <strong>100</strong> and <strong>Split virtual disk into multiple files</strong></p></li>
+<li><p>Click <em>Next</em>, then click on <strong>customize hardware</strong> and change the <em>Memory</em> from 2GB to <strong>8GB</strong>.</p></li>
+<li><p>Scroll down to the <strong>New CD/DVD (SATA)</strong> option and select <strong>Use ISO inage file:</strong> find Ubuntu image you had previously downloaded.</p></li>
+<li><p>Click on <strong>close</strong> then <strong>finish</strong>.</p></li>
+<li><p>Your newly instlaled virtual machine should be displayed on the left side panel. Click on <strong>Play Virtual Machine</strong>.</p></li>
+<li><p>Once the Welcome screen appears, select the language and <strong>Install Ubuntu</strong>.</p></li>
+<li><p>In the <em>Updates and Other Software screen</em> make sure to select <strong>Normal installation</strong> and click continue.</p></li>
+<li><p>In the <em>Installation type</em> screen select <strong>Erase disk and install Ubutu</strong>.</p></li>
+<li><p>Click <strong>Install now</strong> and then <strong>continue</strong>.</p></li>
+<li><p>Select your region and then complete the user information screen.</p></li>
+<li><p>Click on complete installation, and wait until the installation to complete.</p></li>
+<li><p>Once the installation is complete click on <strong>restart now</strong> and wait for the system to restart.</p></li>
+</ol>
+<p>Now you should have a login screen and ready to move on to the next step of the installation.</p>
+</div>
 </div>
 
 
@@ -209,8 +242,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="getting_started.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="index.html" class="btn btn-neutral float-left" title="catvehicle - A ROS package for autonomous vehicle applications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rosinstallation.html" class="btn btn-neutral float-right" title="ROS-noetic Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="getting_started.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

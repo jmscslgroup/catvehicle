@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>About CAT Vehicle &mdash; catvehicle melodic_gazebo-9 documentation</title>
+  <title>Virtualization Environment Installation &mdash; catvehicle melodic_gazebo-9 documentation</title>
   
 
   
@@ -41,11 +41,9 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-    <link rel="author" title="About these documents" href="#" />
+    <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Getting Started" href="getting_started.html" />
-    <link rel="prev" title="catvehicle - A ROS package for autonomous vehicle applications" href="index.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,8 +96,8 @@
             
             
               <p class="caption"><span class="caption-text">Main</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">About CAT Vehicle</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About CAT Vehicle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ubuntuinstall.html">Ubuntu Desktop Download</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rosinstallation.html">ROS-noetic Installation</a></li>
@@ -153,14 +151,14 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>About CAT Vehicle</li>
+      <li>Virtualization Environment Installation</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/jmscslgroup/catvehicle/blob/master/docs/source/about.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/jmscslgroup/catvehicle/blob/master/docs/source/ve-installation.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -198,9 +196,59 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="about-cat-vehicle">
-<h1>About CAT Vehicle<a class="headerlink" href="#about-cat-vehicle" title="Permalink to this headline">¶</a></h1>
-<p><strong>CAT Vehicle</strong> is ROS package for Autonomous Vehicle Simulation that facilitates the development of Connected-and-Autonomous Vehicle applications.</p>
+<div class="section" id="virtualization-environment-installation">
+<h1>Virtualization Environment Installation<a class="headerlink" href="#virtualization-environment-installation" title="Permalink to this headline">¶</a></h1>
+<p>This is the installation of virtual software to host Ubuntu 20.04.
+There are several virtualization softwares. We recommend using VMWare which is provided through The University of Arizona software licensing.
+If you are running windows, you may also use dual boot.
+In this section we wil go over how to install VMWare on your machine.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have an Ubuntu running system, you do not need to install a virtual machine software.
+This tutorial does not go over how to install VirtualBox or Dual boot, though those are options.</p>
+</div>
+<div class="section" id="vmware">
+<h2>VMware<a class="headerlink" href="#vmware" title="Permalink to this headline">¶</a></h2>
+<p>For this section you may use the <a class="reference external" href="https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?cmi_cs=1&amp;cmi_mnuMain=16a020b5-ed3c-df11-b4ab-0030487d8897&amp;ws=c6fcd2a5-a432-de11-9d57-0030485a8df0&amp;vsro=8">software license</a> through The University of Arizona.
+If you do not have an account, you may use the <a class="reference external" href="https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/15_0">Free VMware for  Windows or Linux.</a>
+For Mac you need the <a class="reference external" href="https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/15_0">Free Fushion VMware License.</a></p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Make sure to choose VMware Workstation 16.x Pro for a Windows or Linux computer
+and VMware Fushion 12 Pro for Mac.</p>
+</div>
+<div class="section" id="for-mac">
+<h3>For Mac:<a class="headerlink" href="#for-mac" title="Permalink to this headline">¶</a></h3>
+<p>Once you have downloaded VMware Fusion 12 Pro, open the disk image file and double click to install.
+You will get a pop up saying “VMware Fusion is an app downloaded from the internet”, go ahead and open it.
+Then you need to authenticate and allow the application to run.
+After the initialization screen, allow the system extension to proceed through the system preference.
+To do this you need to click on the open system preference, and allow for the system extension.
+Agree to the Lincense.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you were able to download VMWare through The University of Arizona, go ahead and enter the license number.
+If you got it through the website for free, go ahead and select the option to try VMware for 30 days.</p>
+</div>
+<p>Click Done after the installation has been completed.
+Next we will take a look on how to install Ubuntu.</p>
+</div>
+<div class="section" id="for-windows">
+<h3>For Windows:<a class="headerlink" href="#for-windows" title="Permalink to this headline">¶</a></h3>
+<p>Once you have downloaded VMware Workstation 16x Pro, open the disk image file right click on it and run as an administrator.
+Click next on all the windows, if you obtained the license through The University of Arizona, you may enter the license number.
+If not you may do select the 30 day trial.</p>
+</div>
+</div>
+<div class="section" id="virtualbox">
+<h2>VirtualBox<a class="headerlink" href="#virtualbox" title="Permalink to this headline">¶</a></h2>
+<p>You may download <a class="reference external" href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> from its website.
+Select your computer’s operating system. Once downloaded, you may install it.</p>
+</div>
+<div class="section" id="dual-boot">
+<h2>Dual Boot<a class="headerlink" href="#dual-boot" title="Permalink to this headline">¶</a></h2>
+<p>This option works well with Windows already installed. You will need an empty USB drive.</p>
+</div>
 </div>
 
 
@@ -208,10 +256,6 @@
            
           </div>
           <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="getting_started.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="index.html" class="btn btn-neutral float-left" title="catvehicle - A ROS package for autonomous vehicle applications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
 
   <hr/>
 
