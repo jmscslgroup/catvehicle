@@ -67,7 +67,11 @@ Authors and contributors
     
    about
    getting_started
-   installation
+   ve-installations
+   ubuntuinstall
+   rosinstallation
+   catsimulator
+   videotutorials
 
 .. toctree::
    :caption: Tutorials
