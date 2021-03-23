@@ -67,7 +67,7 @@ Authors and contributors
     
    about
    getting_started
-   ve-installations
+   ve-installation
    ubuntuinstall
    rosinstallation
    catsimulator

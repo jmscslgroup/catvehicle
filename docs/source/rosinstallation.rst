@@ -2,6 +2,7 @@ ROS-noetic Installation
 +++++++++++++++++++++++++
 
 If you have gone this far, you should have Ubuntu 20.04.2.0 LTS running. 
+If you do not have Ubuntu 20.04 LTS, please go back to the installation :doc:`ubuntuinstall`.
 
 In this section we will be installing and making sure that ROS is running. 
 You may visit the official site at `Ubuntu install of ROS Noetic <http://wiki.ros.org/noetic/Installation/Ubuntu>`_
@@ -51,10 +52,10 @@ Now that you have ROS install, you may test it by running:
 This will run ROS and get something like: 
 
 .. image:: roscore-output.jpg
+   :width: 400
 
-Video tutorials
-================
-1. Installations and Quick Start
+
+Installation and Quick Start
 ------------------------------------
 
 This tutorial video demonstrates how to install :code:`Ros-noetic`.
@@ -62,10 +63,3 @@ This tutorial video demonstrates how to install :code:`Ros-noetic`.
 ..  youtube:: ZNqekNFKDuc
     :aspect: 16:9
 
-Installations and Quick Start
-------------------------------------
-    
-This tutorial video demonstrates how to install :code:`CATvehicle Simulator`.
-
-..  youtube:: CsjsgmYSqYs
-   :aspect: 16:9
