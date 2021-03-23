@@ -12,14 +12,14 @@ In this section we wil go over how to install VMWare on your machine.
     This tutorial does not go over how to install VirtualBox or Dual boot, though those are options. 
 
 VMware
------------
-For this section you may use the `software license <https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?cmi_cs=1&cmi_mnuMain=16a020b5-ed3c-df11-b4ab-0030487d8897&ws=c6fcd2a5-a432-de11-9d57-0030485a8df0&vsro=8>`_ through The University of Arizona.
+^^^^^^^^^
+For this section you may use the `Software License <https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?cmi_cs=1&cmi_mnuMain=16a020b5-ed3c-df11-b4ab-0030487d8897&ws=c6fcd2a5-a432-de11-9d57-0030485a8df0&vsro=8>`_ through The University of Arizona.
 If you do not have an account, you may use the `Free VMware for  Windows or Linux. <https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_work station_player/15_0>`_ 
-For Mac you need the `Free Fushion VMware License. <https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_work station_player/15_0>`_
+For Mac you need the `Free Fusion VMware License. <https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_work station_player/15_0>`_
 
 .. caution::
     Make sure to choose VMware Workstation 16.x Pro for a Windows or Linux computer 
-    and VMware Fushion 12 Pro for Mac. 
+    and VMware Fusion 12 Pro for Mac. 
 
 For Mac:
 =========
@@ -46,10 +46,10 @@ Click next on all the windows, if you obtained the license through The Universit
 If not you may do select the 30 day trial. 
 
 VirtualBox
------------
+^^^^^^^^^^^^
 You may download `VirtualBox <https://www.virtualbox.org/wiki/Downloads>`_ from its website. 
 Select your computer's operating system. Once downloaded, you may install it. 
 
 Dual Boot
------------
+^^^^^^^^^^^^^^
 This option works well with Windows already installed. You will need an empty USB drive.
