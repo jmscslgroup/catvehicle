@@ -1,4 +1,4 @@
-catvehicle - A ROS package for autonomous vehicle applications
+Catvehicle - A ROS package for autonomous vehicle applications
 ==================================================================
 
 .. image::  https://raw.githubusercontent.com/jmscslgroup/catvehicle/melodic_gazebo-9/docs/source/favicon.png
