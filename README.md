@@ -100,7 +100,7 @@ If you run into a problem, please feel free to post to [issues](https://github.c
 
 # Acknowledgements
 ## License
-Copyright (c) 2013-2020 Arizona Board of Regents; The University of Arizona
+Copyright (c) Arizona Board of Regents; The University of Arizona
 All rights reserved
 
 Permission is hereby granted, without written agreement and without 
