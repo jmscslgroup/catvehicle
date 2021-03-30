@@ -1,6 +1,6 @@
 Ubuntu Desktop Download 
 +++++++++++++++++++++++
-This section will help with installing Ubuntu 
+This section will help with installing Ubuntu 20.04 LTS
 
 .. note:: 
    If you already have Ubuntu 20.04 LTS as your running system you may skip to the next section where we install ROS. 
@@ -10,7 +10,7 @@ Before Installing
 Before we continue, please make sure to have your virtual software up and running.
 The installation works with VMWare or VirtualBox.
 
-Istallation Steps for VMware: 
+Installation Steps for VMware: 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Download Ubuntu Desktop from the `Ubuntu Download Page <https://ubuntu.com/download/desktop>`_

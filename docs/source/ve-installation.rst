@@ -11,6 +11,9 @@ In this section we wil go over how to install VMWare on your machine.
     If you have an Ubuntu running system, you do not need to install a virtual machine software. 
     This tutorial does not go over how to install VirtualBox or Dual boot, though those are options. 
 
+.. warning::
+    Before installing, make sure to have at least 60 GB of hard disk space available in the system (100GB recommended) and 4GB of Ram (8GB recommended). 
+
 VMware
 ^^^^^^^^^
 For this section you may use the `Software License <https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?cmi_cs=1&cmi_mnuMain=16a020b5-ed3c-df11-b4ab-0030487d8897&ws=c6fcd2a5-a432-de11-9d57-0030485a8df0&vsro=8>`_ through The University of Arizona.
