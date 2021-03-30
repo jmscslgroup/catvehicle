@@ -81,7 +81,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "catvehicle"
-author = "Rahul Bhadani"
+author = "http://csl.arizona.edu/"
 title = "catvehicle: ROS Package for Autonomous Vehicle Simulation"
 copyright = f"{datetime.now():%Y}, {author}"
 

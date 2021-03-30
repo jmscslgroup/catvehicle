@@ -60,6 +60,6 @@ jobs:
         git config --global user.name "rahulbhadani"
         touch .nojekyll
         git add .
-        git commit -m "Updating documenation"
+        git commit --allow-empty -m "Updating documenation"
         git push
 
