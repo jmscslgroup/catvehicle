@@ -4,16 +4,14 @@ Video tutorials
 Installations and Quick Start
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**This video tutorial demonstrates how to install :code:`Ros-noetic`.**
+This video tutorial demonstrates how to install :code:`Ros-noetic`.
 
 ..  youtube:: ZNqekNFKDuc
     :aspect: 16:9
 
 
-    
 
-
-**This video tutorial demonstrates how to install the :code:`CATvehicle Simulator`.**
+This video tutorial demonstrates how to install the :code:`CATvehicle Simulator`.
 
 ..  youtube:: CsjsgmYSqYs
    :aspect: 16:9
@@ -29,7 +27,6 @@ Other Tutorials
 
 ..  youtube:: IeKEa86gh78
    :aspect: 16:9
-
 
 
 
