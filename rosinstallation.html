@@ -229,6 +229,11 @@ You may visit the official site at <a class="reference external" href="http://wi
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">ros</span><span class="o">/</span><span class="n">noetic</span><span class="o">/</span><span class="n">setup</span><span class="o">.</span><span class="n">bash</span>
 </pre></div>
 </div>
+<p>It can be convenient to automatically source this script every time a new shell is launched. These commands will do that for you.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;source /opt/ros/noetic/setup.bash&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">source</span> <span class="o">~/.</span><span class="n">bashrc</span>
+</pre></div>
+</div>
 <p>Install Tool for building packages:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">rosdep</span> <span class="n">python3</span><span class="o">-</span><span class="n">rosinstall</span> <span class="n">python3</span><span class="o">-</span><span class="n">rosinstall</span><span class="o">-</span><span class="n">generator</span> <span class="n">python3</span><span class="o">-</span><span class="n">wstool</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span>
 </pre></div>

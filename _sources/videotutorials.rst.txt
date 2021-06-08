@@ -2,7 +2,7 @@ Video tutorials
 ++++++++++++++++++
 
 Installations and Quick Start
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 
 This video tutorial demonstrates how to install :code:`Ros-noetic`.
 
@@ -19,8 +19,9 @@ This video tutorial demonstrates how to install the :code:`CATvehicle Simulator`
 
 
 
+
 Other Tutorials 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------
 
 
 **This tutorial demonstrates how to run a testfile on the catvehicle.**
