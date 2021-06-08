@@ -30,6 +30,10 @@ Set up your environment (you must source this script in every bash terminal you 
 ::
    source /opt/ros/noetic/setup.bash
 
+It can be convenient to automatically source this script every time a new shell is launched. These commands will do that for you.   
+::
+   echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+   source ~/.bashrc  
 Install Tool for building packages: 
 :: 
    sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
