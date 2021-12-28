@@ -85,12 +85,12 @@ output="screen" ns="/$(arg robot_name)" args="joint1_velocity_controller joint2_
 
 <!--/node-->
 
-<node name="distanceEstimator" pkg="catvehicle" type="distanceEstimator" output="screen">
+<!--node name="distanceEstimator" pkg="catvehicle" type="distanceEstimator" output="screen">
     <param name="scan_topic" value="/$(arg robot_name)/front_laser_points"/>
     <param name="angle_min" value="-10.0"/>
     <param name="angle_max" value="10.0"/>
 
-</node>
+</node-->
 
 <!-- Let's be safe with obstacles by stopping when we get too close--> 
 <node name="obstacleStopper$(arg robot_name)" pkg="obstaclestopper" type="obstaclestopper_node" output="screen" if="$(arg obstaclestopper)"/>
