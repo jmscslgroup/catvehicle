@@ -173,9 +173,9 @@ namespace gazebo
                 
                 if(rv_length < N_POINTS-1)
                 {
-                    ROS_INFO_STREAM("rv_length: "<< rv_length);
-                    ROS_INFO_STREAM("N_POINTS: "<< N_POINTS);
-                    ROS_INFO_STREAM("Returning as it is ");
+                 //   ROS_INFO_STREAM("rv_length: "<< rv_length);
+                 //   ROS_INFO_STREAM("N_POINTS: "<< N_POINTS);
+                  //  ROS_INFO_STREAM("Returning as it is ");
                     return (old_relvel.at( old_relvel.size() -1 ));
                 }
                 double sum = 0.0;
