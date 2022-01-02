@@ -176,7 +176,7 @@ http://gazebosim.org/tutorials/?tut=ros_control#Prerequisites
 <gazebo>
   <plugin name="cmdvel_controller" filename="libcatvehiclegazebo.so">
 	<robotNamespace>/$(arg roboname)</robotNamespace>
-      <updateRate>20.0</updateRate>
+      <updateRate>$(arg updateRate)</updateRate>
   </plugin>
 </gazebo>
 </robot>
