@@ -42,6 +42,7 @@ include_directories(${GAZEBO_INCLUDE_DIRS}
 )
 link_directories(${GAZEBO_LIBRARY_DIRS})
 include_directories(include)
+include_directories(/usr/include/sdformat-9.10)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
